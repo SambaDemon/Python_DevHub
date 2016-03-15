@@ -1,10 +1,6 @@
 from . .Request import Request
 from . .Utilities import RemoveFromJson
-from . .Model.Application import Application
-from . .Model.Credentials import Credentials
-from . .Model.PayPal import PayPal
-from . .Model.Reports import Reports
-from . .Model.Transaction import Transaction
+
 
 class Reversal (Request):
 

@@ -1,12 +1,6 @@
 from . .Request import Request
 from . .Utilities import RemoveFromJson
-from . .Model.Applepay import Applepay
-from . .Model.Application import Application
-from . .Model.Card import Card
-from . .Model.Credentials import Credentials
-from . .Model.DemandDepositAccount import DemandDepositAccount
-from . .Model.Reports import Reports
-from . .Model.Transaction import Transaction
+
 
 class PaymentAccountCreate (Request):
 

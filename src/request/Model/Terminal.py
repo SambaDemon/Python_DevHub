@@ -1,4 +1,3 @@
-
 import sys
 from . .Utilities import Frozen
 
@@ -17,27 +16,27 @@ class Terminal(object):
     class CapabilityEnum(object):
         def __init__(self, value):
             self.value=value
-    CapabilityEnum.NOT_USED = CapabilityEnum("notused").value
-    CapabilityEnum.MAG_STRIPE = CapabilityEnum("magstripe").value
-    CapabilityEnum.KEYED_ONLY = CapabilityEnum("keyedonly").value
+    CapabilityEnum.NOT_USED = "notused"
+    CapabilityEnum.MAG_STRIPE = "magstripe"
+    CapabilityEnum.KEYED_ONLY = "keyedonly"
     class EntryModeEnum(object):
         def __init__(self, value):
             self.value=value
-    EntryModeEnum.NOT_USED = EntryModeEnum("notused").value
-    EntryModeEnum.KEYED = EntryModeEnum("keyed").value
-    EntryModeEnum.TRACK1 = EntryModeEnum("track1").value
-    EntryModeEnum.TRACK2 = EntryModeEnum("track2").value
-    EntryModeEnum.COMPLETE_READ = EntryModeEnum("completeread").value
+    EntryModeEnum.NOT_USED = "notused"
+    EntryModeEnum.KEYED = "keyed"
+    EntryModeEnum.TRACK1 = "track1"
+    EntryModeEnum.TRACK2 = "track2"
+    EntryModeEnum.COMPLETE_READ = "completeread"
     class CardholderIDEnum(object):
         def __init__(self, value):
             self.value=value
-    CardholderIDEnum.SIGNATURE = CardholderIDEnum("signature").value
-    CardholderIDEnum.PIN = CardholderIDEnum("pin").value
-    CardholderIDEnum.NO_PIN = CardholderIDEnum("nopin").value
-    CardholderIDEnum.DIRECT_MARKET = CardholderIDEnum("directmarket").value
+    CardholderIDEnum.SIGNATURE = "signature"
+    CardholderIDEnum.PIN = "pin"
+    CardholderIDEnum.NO_PIN = "nopin"
+    CardholderIDEnum.DIRECT_MARKET = "directmarket"
     class CapabilityOfCatTerminalEnum(object):
         def __init__(self, value):
             self.value=value
-    CapabilityOfCatTerminalEnum.SELF_SERVICE = CapabilityOfCatTerminalEnum("self service").value
+    CapabilityOfCatTerminalEnum.SELF_SERVICE = "self service"
     
     __setattr__=Frozen(object.__setattr__)

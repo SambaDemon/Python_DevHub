@@ -2,34 +2,39 @@ import Boarding
 import Credit
 import Check
 import Services
-from Model import *
+import Model
 
 def sampleCreditAuthorization() :
         authorizationRequest = Credit.Authorization()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         authorizationRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         authorizationRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "10.00"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         authorizationRequest.Transaction = transaction
 
-        card = Card();
+        card = Model.Card();
+        
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Card.TypeEnum.VI)
+        card.Type = (Model.Card.TypeEnum.VI)
         authorizationRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         authorizationRequest.Application = application
 
@@ -38,19 +43,23 @@ def sampleCreditAuthorization() :
 def sampleCreditReversal(transactionID) :
         reversalRequest = Credit.Reversal()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         reversalRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         reversalRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.TransactionID = transactionID
         reversalRequest.Transaction = transaction
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         reversalRequest.Application = application
 
@@ -59,19 +68,23 @@ def sampleCreditReversal(transactionID) :
 def sampleCreditAuthorizationCompletion(transactionID) :
         authorizationCompletionRequest = Credit.AuthorizationCompletion()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         authorizationCompletionRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         authorizationCompletionRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.TransactionID = transactionID
         authorizationCompletionRequest.Transaction = transaction
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         authorizationCompletionRequest.Application = application
 
@@ -80,31 +93,36 @@ def sampleCreditAuthorizationCompletion(transactionID) :
 def sampleCreditCaptureGivenAuth() :
         captureGivenAuthRequest = Credit.CaptureGivenAuth()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         captureGivenAuthRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         captureGivenAuthRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
         transaction.AuthorizationDate = "1111-11-11"
         transaction.ApprovalNumber = "1234"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         captureGivenAuthRequest.Transaction = transaction
 
-        card = Card();
+        card = Model.Card();
+        
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Card.TypeEnum.VI)
+        card.Type = (Model.Card.TypeEnum.VI)
         captureGivenAuthRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         captureGivenAuthRequest.Application = application
 
@@ -113,19 +131,23 @@ def sampleCreditCaptureGivenAuth() :
 def sampleCreditCredit(transactionID) :
         creditRequest = Credit.Credit()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         creditRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         creditRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.TransactionID = transactionID
         creditRequest.Transaction = transaction
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         creditRequest.Application = application
 
@@ -134,29 +156,34 @@ def sampleCreditCredit(transactionID) :
 def sampleCreditForce() :
         forceRequest = Credit.Force()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         forceRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         forceRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         forceRequest.Transaction = transaction
 
-        card = Card();
+        card = Model.Card();
+        
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Card.TypeEnum.VI)
+        card.Type = (Model.Card.TypeEnum.VI)
         forceRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         forceRequest.Application = application
 
@@ -165,29 +192,34 @@ def sampleCreditForce() :
 def sampleCreditReturn() :
         returnRequest = Credit.Return()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         returnRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         returnRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "123"
         transaction.TransactionAmount = "10.00"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         returnRequest.Transaction = transaction
 
-        card = Card();
+        card = Model.Card();
+        
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Card.TypeEnum.VI)
+        card.Type = (Model.Card.TypeEnum.VI)
         returnRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         returnRequest.Application = application
 
@@ -196,29 +228,34 @@ def sampleCreditReturn() :
 def sampleCreditSale() :
         saleRequest = Credit.Sale()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         saleRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         saleRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         saleRequest.Transaction = transaction
 
-        card = Card();
+        card = Model.Card();
+        
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Card.TypeEnum.VI)
+        card.Type = (Model.Card.TypeEnum.VI)
         saleRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         saleRequest.Application = application
 
@@ -227,19 +264,23 @@ def sampleCreditSale() :
 def sampleCreditVoid(transactionID) :
         voidRequest = Credit.Void()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         voidRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         voidRequest.Reports = reports
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.TransactionID = transactionID
         voidRequest.Transaction = transaction
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         voidRequest.Application = application
 
@@ -249,19 +290,23 @@ def sampleCreditVoid(transactionID) :
 def sampleCheckCredit(transactionID) :
         creditRequest = Check.Credit()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         creditRequest.Credentials = credentials
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.TransactionID = transactionID
         creditRequest.Transaction = transaction
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         creditRequest.Reports = reports
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         creditRequest.Application = application
 
@@ -270,17 +315,20 @@ def sampleCheckCredit(transactionID) :
 def sampleCheckReturn() :
         returnRequest = Check.Return()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         returnRequest.Credentials = credentials
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "708388073320126000"
         transaction.TransactionAmount = "12.56"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         returnRequest.Transaction = transaction
 
-        demandDepositAccount = DemandDepositAccount();
+        demandDepositAccount = Model.DemandDepositAccount();
+        
         demandDepositAccount.DDAAccountType = "Checking"
         demandDepositAccount.AccountNumber = "234"
         demandDepositAccount.RoutingNumber = "123234345"
@@ -288,7 +336,8 @@ def sampleCheckReturn() :
         demandDepositAccount.CCDPaymentInformation = "567"
         returnRequest.DemandDepositAccount = demandDepositAccount
 
-        address = Address();
+        address = Model.Address();
+        
         address.BillingName = "John Smith"
         address.BillingAddress1 = "1 Main St."
         address.BillingCity = "Burlington"
@@ -296,14 +345,16 @@ def sampleCheckReturn() :
         address.BillingZipcode = "01803-3747"
         address.BillingEmail = "jdoe@litle.com"
         address.BillingPhone = "978-551-0040"
-        address.BillingCountry = (Address.BillingCountryEnum.USA)
+        address.BillingCountry = (Model.Address.BillingCountryEnum.USA)
         returnRequest.Address = address
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         returnRequest.Reports = reports
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         returnRequest.Application = application
 
@@ -312,17 +363,20 @@ def sampleCheckReturn() :
 def sampleCheckSale() :
         saleRequest = Check.Sale()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         saleRequest.Credentials = credentials
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         saleRequest.Transaction = transaction
 
-        address = Address();
+        address = Model.Address();
+        
         address.BillingName = "John Smith"
         address.BillingAddress1 = "1 Main St."
         address.BillingCity = "Burlington"
@@ -330,24 +384,28 @@ def sampleCheckSale() :
         address.BillingZipcode = "01803-3747"
         address.BillingEmail = "jdoe@litle.com"
         address.BillingPhone = "978-551-0040"
-        address.BillingCountry = (Address.BillingCountryEnum.USA)
+        address.BillingCountry = (Model.Address.BillingCountryEnum.USA)
         saleRequest.Address = address
 
-        demandDepositAccount = DemandDepositAccount();
+        demandDepositAccount = Model.DemandDepositAccount();
+        
         demandDepositAccount.RoutingNumber = "123234345"
         demandDepositAccount.DDAAccountType = "Checking"
         demandDepositAccount.CheckNumber = "456"
         saleRequest.DemandDepositAccount = demandDepositAccount
 
-        paymentAccount = PaymentAccount();
+        paymentAccount = Model.PaymentAccount();
+        
         paymentAccount.PaymentAccountID = "1232343454565"
         saleRequest.PaymentAccount = paymentAccount
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         saleRequest.Reports = reports
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         saleRequest.Application = application
 
@@ -356,17 +414,20 @@ def sampleCheckSale() :
 def sampleCheckVerification() :
         verificationRequest = Check.Verification()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         verificationRequest.Credentials = credentials
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
         verificationRequest.Transaction = transaction
 
-        address = Address();
+        address = Model.Address();
+        
         address.BillingName = "John Smith"
         address.BillingAddress1 = "1 Main St."
         address.BillingCity = "Burlington"
@@ -374,10 +435,11 @@ def sampleCheckVerification() :
         address.BillingZipcode = "01803-3747"
         address.BillingEmail = "jdoe@litle.com"
         address.BillingPhone = "978-551-0040"
-        address.BillingCountry = (Address.BillingCountryEnum.USA)
+        address.BillingCountry = (Model.Address.BillingCountryEnum.USA)
         verificationRequest.Address = address
 
-        demandDepositAccount = DemandDepositAccount();
+        demandDepositAccount = Model.DemandDepositAccount();
+        
         demandDepositAccount.DDAAccountType = "Checking"
         demandDepositAccount.AccountNumber = "234"
         demandDepositAccount.RoutingNumber = "123234345"
@@ -385,11 +447,13 @@ def sampleCheckVerification() :
         demandDepositAccount.CCDPaymentInformation = "567"
         verificationRequest.DemandDepositAccount = demandDepositAccount
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         verificationRequest.Reports = reports
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         verificationRequest.Application = application
 
@@ -398,19 +462,23 @@ def sampleCheckVerification() :
 def sampleCheckVoid(transactionID) :
         voidRequest = Check.Void()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         voidRequest.Credentials = credentials
 
-        transaction = Transaction();
+        transaction = Model.Transaction();
+        
         transaction.TransactionID = transactionID
         voidRequest.Transaction = transaction
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         voidRequest.Reports = reports
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         voidRequest.Application = application
 
@@ -420,11 +488,13 @@ def sampleCheckVoid(transactionID) :
 def sampleServicesCreatePlan() :
         createPlanRequest = Services.CreatePlan()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         createPlanRequest.Credentials = credentials
 
-        scheduledTask = ScheduledTask();
+        scheduledTask = Model.ScheduledTask();
+        
         scheduledTask.Active = "true"
         scheduledTask.ScheduledTaskID = "12"
         scheduledTask.Name = "NewPlan"
@@ -441,19 +511,23 @@ def sampleServicesCreatePlan() :
 def sampleServicesFraudCheck() :
         fraudCheckRequest = Services.FraudCheck()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         fraudCheckRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         fraudCheckRequest.Reports = reports
 
-        advancedFraudChecks = AdvancedFraudChecks();
+        advancedFraudChecks = Model.AdvancedFraudChecks();
+        
         advancedFraudChecks.ThreatMetrixSessionID = "123"
         fraudCheckRequest.AdvancedFraudChecks = advancedFraudChecks
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         fraudCheckRequest.Application = application
 
@@ -462,19 +536,23 @@ def sampleServicesFraudCheck() :
 def sampleServicesPaymentAccountCreate() :
         paymentAccountCreateRequest = Services.PaymentAccountCreate()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         paymentAccountCreateRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         paymentAccountCreateRequest.Reports = reports
 
-        card = Card();
+        card = Model.Card();
+        
         card.AccountNumber = "5454545454545454"
         paymentAccountCreateRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         paymentAccountCreateRequest.Application = application
 
@@ -483,11 +561,13 @@ def sampleServicesPaymentAccountCreate() :
 def sampleServicesScheduledTaskDelete() :
         scheduledTaskDeleteRequest = Services.ScheduledTaskDelete()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         scheduledTaskDeleteRequest.Credentials = credentials
 
-        scheduledTask = ScheduledTask();
+        scheduledTask = Model.ScheduledTask();
+        
         scheduledTask.SubscriptionID = "12432463563564"
         scheduledTaskDeleteRequest.ScheduledTask = scheduledTask
 
@@ -496,11 +576,13 @@ def sampleServicesScheduledTaskDelete() :
 def sampleServicesScheduledTaskUpdate() :
         scheduledTaskUpdateRequest = Services.ScheduledTaskUpdate()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         scheduledTaskUpdateRequest.Credentials = credentials
 
-        scheduledTask = ScheduledTask();
+        scheduledTask = Model.ScheduledTask();
+        
         scheduledTask.SubscriptionID = "12432463563564"
         scheduledTask.BillingDate = "2019-10-21"
         scheduledTaskUpdateRequest.ScheduledTask = scheduledTask
@@ -510,23 +592,28 @@ def sampleServicesScheduledTaskUpdate() :
 def sampleServicesPaymentAccountUpdate() :
         paymentAccountUpdateRequest = Services.PaymentAccountUpdate()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         paymentAccountUpdateRequest.Credentials = credentials
 
-        reports = Reports();
+        reports = Model.Reports();
+        
         reports.ReportGroup = "1243"
         paymentAccountUpdateRequest.Reports = reports
 
-        card = Card();
+        card = Model.Card();
+        
         card.CVV = "123"
         paymentAccountUpdateRequest.Card = card
 
-        application = Application();
+        application = Model.Application();
+        
         application.ApplicationID = "1234"
         paymentAccountUpdateRequest.Application = application
 
-        paymentAccount = PaymentAccount();
+        paymentAccount = Model.PaymentAccount();
+        
         paymentAccount.PaymentAccountID = "1112000188575454"
         paymentAccountUpdateRequest.PaymentAccount = paymentAccount
 
@@ -535,11 +622,13 @@ def sampleServicesPaymentAccountUpdate() :
 def sampleServicesUpdatePlan() :
         updatePlanRequest = Services.UpdatePlan()
 
-        credentials = Credentials();
+        credentials = Model.Credentials();
+        
         credentials.AcceptorID = "1147003"
         updatePlanRequest.Credentials = credentials
 
-        scheduledTask = ScheduledTask();
+        scheduledTask = Model.ScheduledTask();
+        
         scheduledTask.Active = "false"
         scheduledTask.ScheduledTaskID = "12"
         updatePlanRequest.ScheduledTask = scheduledTask
@@ -557,7 +646,8 @@ def sampleBoardingRetrieveMccList() :
 def sampleBoardingCreateLegalEntity() :
         createLegalEntityRequest = Boarding.CreateLegalEntity()
 
-        legalEntity = LegalEntity();
+        legalEntity = Model.LegalEntity();
+        
         legalEntity.Name = "Legal Entity Name"
         legalEntity.Type = "CORPORATION"
         legalEntity.TaxID = "12345"
@@ -566,7 +656,8 @@ def sampleBoardingCreateLegalEntity() :
         legalEntity.YearsInBusiness = "12"
         createLegalEntityRequest.LegalEntity = legalEntity
 
-        address = Address();
+        address = Model.Address();
+        
         address.Address1 = "Street Address 1"
         address.Address2 = "Street Address 2"
         address.City = "City"
@@ -575,7 +666,8 @@ def sampleBoardingCreateLegalEntity() :
         address.Country = "USA"
         createLegalEntityRequest.Address = address
 
-        principal = Principal();
+        principal = Model.Principal();
+        
         principal.Title = "Chief Financial Officer"
         principal.FirstName = "p first"
         principal.LastName = "p last"
@@ -585,7 +677,8 @@ def sampleBoardingCreateLegalEntity() :
         principal.DateOfBirth = "1980-10-12"
         principal.DriversLicense = "892327409832"
         principal.DriversLicenseState = "MA"
-        principalAddress = Address();
+        principalAddress = Model.Address();
+        
         principalAddress.Address1 = "Street Address 1"
         principalAddress.Address2 = "Street Address 2"
         principalAddress.City = "Boston"
@@ -600,7 +693,8 @@ def sampleBoardingCreateLegalEntity() :
 def sampleBoardingCreateSubMerchant() :
         createSubMerchantRequest = Boarding.CreateSubMerchant("82915251623280808")
 
-        merchant = Merchant();
+        merchant = Model.Merchant();
+        
         merchant.Name = "Merchant Name"
         merchant.URL = "http://merchantUrl"
         merchant.CustomerServiceNumber = "8407809000"
@@ -614,7 +708,8 @@ def sampleBoardingCreateSubMerchant() :
         merchant.FraudEnabled = "true"
         createSubMerchantRequest.Merchant = merchant
 
-        address = Address();
+        address = Model.Address();
+        
         address.Address1 = "Street Address 1"
         address.Address2 = "Street Address 2"
         address.City = "City"
@@ -623,7 +718,8 @@ def sampleBoardingCreateSubMerchant() :
         address.Country = "USA"
         createSubMerchantRequest.Address = address
 
-        primaryContact = PrimaryContact();
+        primaryContact = Model.PrimaryContact();
+        
         primaryContact.FirstName = "John"
         primaryContact.LastName = "Doe"
         primaryContact.Phone = "9785552222"
@@ -649,7 +745,8 @@ def sampleBoardingRetrieveSubMerchant() :
 def sampleBoardingUpdateLegalEntity() :
         updateLegalEntityRequest = Boarding.UpdateLegalEntity("82915251623280808")
 
-        address = Address();
+        address = Model.Address();
+        
         address.Address1 = "Street Address 1"
         address.Address2 = "Street Address 2"
         address.City = "City"
@@ -663,7 +760,8 @@ def sampleBoardingUpdateLegalEntity() :
 def sampleBoardingUpdateSubMerchant() :
         updateSubMerchantRequest = Boarding.UpdateSubMerchant("82915251623280808", "82915269567038420")
 
-        merchant = Merchant();
+        merchant = Model.Merchant();
+        
         merchant.FraudEnabled = "true"
         updateSubMerchantRequest.Merchant = merchant
 

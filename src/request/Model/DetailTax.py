@@ -1,4 +1,3 @@
-
 import sys
 from . .Utilities import Frozen
 
@@ -14,20 +13,20 @@ class DetailTax(object):
     class TaxTypeIdentifierEnum(object):
         def __init__(self, value):
             self.value=value
-    TaxTypeIdentifierEnum.UNKOWN = TaxTypeIdentifierEnum("00").value
-    TaxTypeIdentifierEnum.NATL_SALES = TaxTypeIdentifierEnum("01").value
-    TaxTypeIdentifierEnum.ST_SALES = TaxTypeIdentifierEnum("02").value
-    TaxTypeIdentifierEnum.CTY_SALES = TaxTypeIdentifierEnum("03").value
-    TaxTypeIdentifierEnum.LCL_SALES = TaxTypeIdentifierEnum("04").value
-    TaxTypeIdentifierEnum.MUN_SALES = TaxTypeIdentifierEnum("05").value
-    TaxTypeIdentifierEnum.OTHER = TaxTypeIdentifierEnum("06").value
-    TaxTypeIdentifierEnum.VAT = TaxTypeIdentifierEnum("10").value
-    TaxTypeIdentifierEnum.GST = TaxTypeIdentifierEnum("11").value
-    TaxTypeIdentifierEnum.PST = TaxTypeIdentifierEnum("12").value
-    TaxTypeIdentifierEnum.HST = TaxTypeIdentifierEnum("13").value
-    TaxTypeIdentifierEnum.QST = TaxTypeIdentifierEnum("14").value
-    TaxTypeIdentifierEnum.ROOM = TaxTypeIdentifierEnum("20").value
-    TaxTypeIdentifierEnum.OCCUPANCY = TaxTypeIdentifierEnum("21").value
-    TaxTypeIdentifierEnum.ENERGY = TaxTypeIdentifierEnum("22").value
+    TaxTypeIdentifierEnum.UNKOWN = "00"
+    TaxTypeIdentifierEnum.NATL_SALES = "01"
+    TaxTypeIdentifierEnum.ST_SALES = "02"
+    TaxTypeIdentifierEnum.CTY_SALES = "03"
+    TaxTypeIdentifierEnum.LCL_SALES = "04"
+    TaxTypeIdentifierEnum.MUN_SALES = "05"
+    TaxTypeIdentifierEnum.OTHER = "06"
+    TaxTypeIdentifierEnum.VAT = "10"
+    TaxTypeIdentifierEnum.GST = "11"
+    TaxTypeIdentifierEnum.PST = "12"
+    TaxTypeIdentifierEnum.HST = "13"
+    TaxTypeIdentifierEnum.QST = "14"
+    TaxTypeIdentifierEnum.ROOM = "20"
+    TaxTypeIdentifierEnum.OCCUPANCY = "21"
+    TaxTypeIdentifierEnum.ENERGY = "22"
     
     __setattr__=Frozen(object.__setattr__)

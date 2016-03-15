@@ -1,11 +1,6 @@
 from . .Request import Request
 from . .Utilities import RemoveFromJson
-from . .Model.Application import Application
-from . .Model.Card import Card
-from . .Model.Credentials import Credentials
-from . .Model.PaymentAccount import PaymentAccount
-from . .Model.Reports import Reports
-from . .Model.Transaction import Transaction
+
 
 class PaymentAccountUpdate (Request):
 

@@ -1,5 +1,3 @@
-import DetailTax
-import LineItem
 import sys
 from . .Utilities import Frozen
 
@@ -26,10 +24,10 @@ class EnhancedData(object):
     class DeliveryTypeEnum(object):
         def __init__(self, value):
             self.value=value
-    DeliveryTypeEnum.CNC = DeliveryTypeEnum("CNC").value
-    DeliveryTypeEnum.DIG = DeliveryTypeEnum("DIG").value
-    DeliveryTypeEnum.PHY = DeliveryTypeEnum("PHY").value
-    DeliveryTypeEnum.SVC = DeliveryTypeEnum("SVC").value
-    DeliveryTypeEnum.TBD = DeliveryTypeEnum("TBD").value
+    DeliveryTypeEnum.CNC = "CNC"
+    DeliveryTypeEnum.DIG = "DIG"
+    DeliveryTypeEnum.PHY = "PHY"
+    DeliveryTypeEnum.SVC = "SVC"
+    DeliveryTypeEnum.TBD = "TBD"
     
     __setattr__=Frozen(object.__setattr__)

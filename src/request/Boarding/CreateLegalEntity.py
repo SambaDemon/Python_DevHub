@@ -1,9 +1,6 @@
 from . .Request import Request
 from . .Utilities import RemoveFromJson
-from . .Model.Address import Address
-from . .Model.Credentials import Credentials
-from . .Model.LegalEntity import LegalEntity
-from . .Model.Principal import Principal
+
 
 class CreateLegalEntity (Request):
 

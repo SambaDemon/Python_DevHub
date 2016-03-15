@@ -1,4 +1,3 @@
-
 import sys
 from . .Utilities import Frozen
 
@@ -24,29 +23,29 @@ class Identification(object):
     class CustomerTypeEnum(object):
         def __init__(self, value):
             self.value=value
-    CustomerTypeEnum.NEW = CustomerTypeEnum("New").value
-    CustomerTypeEnum.EXISTING = CustomerTypeEnum("Existing").value
+    CustomerTypeEnum.NEW = "New"
+    CustomerTypeEnum.EXISTING = "Existing"
     class IncomeCurrencyEnum(object):
         def __init__(self, value):
             self.value=value
-    IncomeCurrencyEnum.AUD = IncomeCurrencyEnum("AUD").value
-    IncomeCurrencyEnum.CAD = IncomeCurrencyEnum("CAD").value
-    IncomeCurrencyEnum.CHF = IncomeCurrencyEnum("CHF").value
-    IncomeCurrencyEnum.DKK = IncomeCurrencyEnum("DKK").value
-    IncomeCurrencyEnum.EUR = IncomeCurrencyEnum("EUR").value
-    IncomeCurrencyEnum.GBP = IncomeCurrencyEnum("GBP").value
-    IncomeCurrencyEnum.HKD = IncomeCurrencyEnum("HKD").value
-    IncomeCurrencyEnum.JPY = IncomeCurrencyEnum("JPY").value
-    IncomeCurrencyEnum.NOK = IncomeCurrencyEnum("NOK").value
-    IncomeCurrencyEnum.NZD = IncomeCurrencyEnum("NZD").value
-    IncomeCurrencyEnum.SEK = IncomeCurrencyEnum("SEK").value
-    IncomeCurrencyEnum.SGD = IncomeCurrencyEnum("SGD").value
-    IncomeCurrencyEnum.USD = IncomeCurrencyEnum("USD").value
+    IncomeCurrencyEnum.AUD = "AUD"
+    IncomeCurrencyEnum.CAD = "CAD"
+    IncomeCurrencyEnum.CHF = "CHF"
+    IncomeCurrencyEnum.DKK = "DKK"
+    IncomeCurrencyEnum.EUR = "EUR"
+    IncomeCurrencyEnum.GBP = "GBP"
+    IncomeCurrencyEnum.HKD = "HKD"
+    IncomeCurrencyEnum.JPY = "JPY"
+    IncomeCurrencyEnum.NOK = "NOK"
+    IncomeCurrencyEnum.NZD = "NZD"
+    IncomeCurrencyEnum.SEK = "SEK"
+    IncomeCurrencyEnum.SGD = "SGD"
+    IncomeCurrencyEnum.USD = "USD"
     class ResidenceStatusEnum(object):
         def __init__(self, value):
             self.value=value
-    ResidenceStatusEnum.OWN = ResidenceStatusEnum("Own").value
-    ResidenceStatusEnum.RENT = ResidenceStatusEnum("Rent").value
-    ResidenceStatusEnum.OTHER = ResidenceStatusEnum("Other").value
+    ResidenceStatusEnum.OWN = "Own"
+    ResidenceStatusEnum.RENT = "Rent"
+    ResidenceStatusEnum.OTHER = "Other"
     
     __setattr__=Frozen(object.__setattr__)

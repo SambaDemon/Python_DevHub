@@ -1,4 +1,3 @@
-import DetailTax
 import sys
 from . .Utilities import Frozen
 
