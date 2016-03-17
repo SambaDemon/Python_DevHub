@@ -11,9 +11,9 @@ class CreateSubMerchant (Request):
     PrimaryContact = None
     SubMerchantFunding = None
 
-    def __init__(self):
+    def __init__(self, entityID):
         super(CreateSubMerchant, self).__init__("boarding", "services", "createSubMerchant", "POST")
-        
+        self.queryParams['entityID'] = entityID
 
     
     

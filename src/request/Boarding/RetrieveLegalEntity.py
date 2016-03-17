@@ -6,8 +6,8 @@ class RetrieveLegalEntity (Request):
 
     
 
-    def __init__(self):
-        super(RetrieveLegalEntity, self).__init__("boarding", "services", "retrieveLegalEntity", "POST")
-        
+    def __init__(self, entityID):
+        super(RetrieveLegalEntity, self).__init__("boarding", "services", "retrieveLegalEntity", "GET")
+        self.queryParams['entityID'] = entityID
 
     

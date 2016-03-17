@@ -11,9 +11,10 @@ class UpdateSubMerchant (Request):
     PrimaryContact = None
     SubMerchantFunding = None
 
-    def __init__(self):
-        super(UpdateSubMerchant, self).__init__("boarding", "services", "updateSubMerchant", "POST")
-        
+    def __init__(self, entityID, subMerchantID):
+        super(UpdateSubMerchant, self).__init__("boarding", "services", "updateSubMerchant", "PUT")
+        self.queryParams['entityID'] = entityID
+        self.queryParams['subMerchantID'] = subMerchantID
 
     
     

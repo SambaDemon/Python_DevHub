@@ -11,9 +11,9 @@ class UpdateLegalEntity (Request):
     Principal = None
     PrincipalArray = None
 
-    def __init__(self):
-        super(UpdateLegalEntity, self).__init__("boarding", "services", "updateLegalEntity", "POST")
-        
+    def __init__(self, entityID):
+        super(UpdateLegalEntity, self).__init__("boarding", "services", "updateLegalEntity", "PUT")
+        self.queryParams['entityID'] = entityID
 
     
     
