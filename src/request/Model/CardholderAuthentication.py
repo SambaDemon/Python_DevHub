@@ -7,9 +7,5 @@ class CardholderAuthentication(object):
     CustomerIpAddress = None
     AuthenticatedByMerchant = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

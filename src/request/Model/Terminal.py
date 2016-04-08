@@ -7,12 +7,6 @@ class Terminal(object):
     EntryMode = None
     CardholderID = None
     CapabilityOfCatTerminal = None
-
-    
-    
-    
-    
-
     class CapabilityEnum(object):
         def __init__(self, value):
             self.value=value
@@ -38,5 +32,4 @@ class Terminal(object):
         def __init__(self, value):
             self.value=value
     CapabilityOfCatTerminalEnum.SELF_SERVICE = "self service"
-    
     __setattr__=Frozen(object.__setattr__)

@@ -18,9 +18,6 @@ class EnhancedData(object):
     LineItemArray = None
     LineItem = None
     DeliveryType = None
-
-    
-
     class DeliveryTypeEnum(object):
         def __init__(self, value):
             self.value=value
@@ -29,5 +26,4 @@ class EnhancedData(object):
     DeliveryTypeEnum.PHY = "PHY"
     DeliveryTypeEnum.SVC = "SVC"
     DeliveryTypeEnum.TBD = "TBD"
-    
     __setattr__=Frozen(object.__setattr__)

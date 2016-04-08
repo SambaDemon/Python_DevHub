@@ -18,10 +18,6 @@ class Transaction(object):
     TransactionType = None
     OrderSource = None
     TaxType = None
-
-    
-    
-
     class OrderSourceEnum(object):
         def __init__(self, value):
             self.value=value
@@ -41,5 +37,4 @@ class Transaction(object):
             self.value=value
     TaxTypeEnum.PAYMENT = "payment"
     TaxTypeEnum.FEE = "fee"
-    
     __setattr__=Frozen(object.__setattr__)

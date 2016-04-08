@@ -6,9 +6,5 @@ class AdvancedFraudResults(object):
     DeviceReputationScore = None
     TriggeredRule = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

@@ -7,9 +7,6 @@ class DetailTax(object):
     TaxRate = None
     AlternateTaxIdentifier = None
     TaxTypeIdentifier = None
-
-    
-
     class TaxTypeIdentifierEnum(object):
         def __init__(self, value):
             self.value=value
@@ -28,5 +25,4 @@ class DetailTax(object):
     TaxTypeIdentifierEnum.ROOM = "20"
     TaxTypeIdentifierEnum.OCCUPANCY = "21"
     TaxTypeIdentifierEnum.ENERGY = "22"
-    
     __setattr__=Frozen(object.__setattr__)

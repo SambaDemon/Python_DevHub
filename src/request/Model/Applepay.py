@@ -7,9 +7,5 @@ class Applepay(object):
     Signature = None
     Version = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

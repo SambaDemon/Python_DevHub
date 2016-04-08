@@ -8,9 +8,5 @@ class DemandDepositAccount(object):
     CheckNumber = None
     CCDPaymentInformation = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

@@ -15,11 +15,6 @@ class Identification(object):
     CustomerType = None
     IncomeCurrency = None
     ResidenceStatus = None
-
-    
-    
-    
-
     class CustomerTypeEnum(object):
         def __init__(self, value):
             self.value=value
@@ -47,5 +42,4 @@ class Identification(object):
     ResidenceStatusEnum.OWN = "Own"
     ResidenceStatusEnum.RENT = "Rent"
     ResidenceStatusEnum.OTHER = "Other"
-    
     __setattr__=Frozen(object.__setattr__)

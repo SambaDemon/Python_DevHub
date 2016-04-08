@@ -7,9 +7,5 @@ class Header(object):
     PublicKeyHash = None
     TransactionID = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

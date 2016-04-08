@@ -27,9 +27,5 @@ class ScheduledTask(object):
     DeleteAddOnArray = None
     DeleteAddOn = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

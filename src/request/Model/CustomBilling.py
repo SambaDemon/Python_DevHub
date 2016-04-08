@@ -7,9 +7,5 @@ class CustomBilling(object):
     Url = None
     City = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

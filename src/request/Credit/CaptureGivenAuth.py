@@ -1,9 +1,7 @@
 from . .Request import Request
 from . .Utilities import RemoveFromJson
 
-
 class CaptureGivenAuth (Request):
-
     Address = None
     Application = None
     Bml = None
@@ -17,21 +15,7 @@ class CaptureGivenAuth (Request):
     Terminal = None
     Transaction = None
     Visa = None
-
+    
     def __init__(self):
         super(CaptureGivenAuth, self).__init__("payment", "credit", "captureGivenAuth", "POST")
         
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

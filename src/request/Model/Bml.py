@@ -10,9 +10,5 @@ class Bml(object):
     VirtualAuthenticationKeyData = None
     ItemCategoryCode = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

@@ -9,9 +9,5 @@ class AdvancedFraudChecks(object):
     CustomAttribute4 = None
     CustomAttribute5 = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

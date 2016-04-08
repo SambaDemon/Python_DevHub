@@ -1,9 +1,7 @@
 from . .Request import Request
 from . .Utilities import RemoveFromJson
 
-
 class Sale (Request):
-
     Address = None
     AdvancedFraudChecks = None
     Applepay = None
@@ -25,29 +23,7 @@ class Sale (Request):
     Transaction = None
     Visa = None
     Wallet = None
-
+    
     def __init__(self):
         super(Sale, self).__init__("payment", "credit", "sale", "POST")
         
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

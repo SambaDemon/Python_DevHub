@@ -11,9 +11,6 @@ class Card(object):
     PaypageRegistrationID = None
     AccountNumber = None
     Type = None
-
-    
-
     class TypeEnum(object):
         def __init__(self, value):
             self.value=value
@@ -28,5 +25,4 @@ class Card(object):
     TypeEnum.EC = "EC"
     TypeEnum.GC = "GC"
     TypeEnum.NONE = ""
-    
     __setattr__=Frozen(object.__setattr__)

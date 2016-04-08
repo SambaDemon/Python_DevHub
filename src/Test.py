@@ -47,12 +47,3 @@ sampleCreditAuthorization()
 #sampleScheduledTaskUpdate()
 #samplePaymentAccountUpdate()
 #sampleUpdatePlan()
-
-#  BOARDING
-#sampleRetrieveMccList()
-#sampleCreateLegalEntity()
-#sampleCreateSubMerchant()
-#sampleRetrieveLegalEntity()
-#sampleRetrieveSubMerchant()
-#sampleUpdateLegalEntity()
-#sampleUpdateSubMerchant()

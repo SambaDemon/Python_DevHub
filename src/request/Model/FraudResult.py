@@ -8,9 +8,5 @@ class FraudResult(object):
     AdvancedAVSResult = None
     AdvancedFraudResults = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

@@ -2,12 +2,6 @@ import sys
 from . .Utilities import Frozen
 
 class Address(object):
-    Address1 = None
-    Address2 = None
-    City = None
-    State = None
-    Zip = None
-    Country = None
     BillingName = None
     BillingFirstName = None
     BillingMiddleInitial = None
@@ -36,10 +30,6 @@ class Address(object):
     ShippingPhone = None
     BillingCountry = None
     ShippingCountry = None
-
-    
-    
-
     class BillingCountryEnum(object):
         def __init__(self, value):
             self.value=value
@@ -548,5 +538,4 @@ class Address(object):
     ShippingCountryEnum.RS = "RS"
     ShippingCountryEnum.ME = "ME"
     ShippingCountryEnum.SS = "SS"
-    
     __setattr__=Frozen(object.__setattr__)

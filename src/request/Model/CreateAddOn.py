@@ -8,9 +8,5 @@ class CreateAddOn(object):
     StartDate = None
     EndDate = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)

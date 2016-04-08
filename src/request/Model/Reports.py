@@ -7,9 +7,5 @@ class Reports(object):
     Campaign = None
     MerchantGroupingID = None
     
-
-    
-
-    
     
     __setattr__=Frozen(object.__setattr__)
