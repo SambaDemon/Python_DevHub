@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from SampleTests import *
 from request.Config import Config
 
