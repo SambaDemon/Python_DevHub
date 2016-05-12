@@ -4,6 +4,7 @@ from request import Utilities
 
 
 def sampleCreditAuthorization():
+    import ipdb; ipdb.set_trace() # DEBUG
     authorization = SampleRequests.sampleCreditAuthorization()
     response = authorization.send()
     return response

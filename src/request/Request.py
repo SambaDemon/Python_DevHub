@@ -1,6 +1,8 @@
 from __future__ import absolute_import
 
 import jsonpickle
+import requests
+
 from .Config import Config
 from .Utilities import RemoveFromJson
 
@@ -19,10 +21,6 @@ class Request (object):
         self.method = method
 
     def send(self):
-        try:
-            import urllib2
-        except ImportError:
-            import urllib.request as urllib2
         if (Config.doNotSend):
             body = jsonpickle.encode(self, unpicklable=False)
             if (Config.printRequest):
@@ -39,23 +37,18 @@ class Request (object):
             body = jsonpickle.encode(self, unpicklable=False)
             if (Config.printRequest):
                 print (body)
-            if(Config.proxy):
-                proxy = urllib2.ProxyHandler(Config.proxy)
-                auth = urllib2.HTTPBasicAuthHandler()
-                opener = urllib2.build_opener(proxy, auth, urllib2.HTTPHandler)
-                urllib2.install_opener(opener)
-            req = urllib2.Request(url)
-            req.add_header('Authorization',
-                           'VANTIV license='+"\""+Config.license+"\"")
-            req.add_header('Content-Type', 'application/json')
             try:
-                import sys
-                if sys.version_info.major == 3:
-                    body = body.encode('utf-8')
-                resp = urllib2.urlopen(req, body)
-                code = resp.getcode()
-                contents = resp.read()
-            except urllib2.HTTPError as error:
+                headers = {'Authorization':
+                           'VANTIV license='+"\""+Config.license+"\"",
+                           'Content-Type': 'application/json'}
+                response = requests.get(url,
+                                        proxies=Config.proxy,
+                                        data=body,
+                                        headers=headers)
+                code = response.status_code
+                import ipdb; ipdb.set_trace() # DEBUG
+                contents = response.json
+            except Exception as error:
                 contents = error.read()
             if (Config.printResponse):
                 print(contents)
