@@ -8,7 +8,7 @@ import sys
 if sys.version_info.major < 3:
     import urllib2 as urllib
 else:
-    import urllib.request, urllib.error, urllib.parse
+    import urllib.request as urllib
 
 
 class Request (object):
@@ -45,21 +45,21 @@ class Request (object):
             if (Config.printRequest):
                 print (body)
             if(Config.proxy):
-                proxy = urllib.request.ProxyHandler(Config.proxy)
-                auth = urllib.request.HTTPBasicAuthHandler()
-                opener = urllib.request.build_opener(proxy,
-                                                     auth,
-                                                     urllib.request.HTTPHandler)
-                urllib.request.install_opener(opener)
-            req = urllib.request.Request(url)
+                proxy = urllib.ProxyHandler(Config.proxy)
+                auth = urllib.HTTPBasicAuthHandler()
+                opener = urllib.build_opener(proxy,
+                                             auth,
+                                             urllib.request.HTTPHandler)
+                urllib.install_opener(opener)
+            req = urllib.Request(url)
             req.add_header('Authorization',
                            'VANTIV license=' + "\"" + Config.license + "\"")
             req.add_header('Content-Type', 'application/json')
             context = ssl._create_unverified_context()
             try:
-                resp = urllib.request.urlopen(req,
-                                              body.encode('UTF-8'),
-                                              context=context)
+                resp = urllib.urlopen(req,
+                                      body.encode('UTF-8'),
+                                      context=context)
                 code = resp.getcode()
                 contents = resp.read()
             except urllib.error.HTTPError as error:
