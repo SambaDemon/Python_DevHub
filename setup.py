@@ -10,7 +10,7 @@ requires = []
 
 setup(name='vantiv',
       version='0.1.0',
-      description='pyramid_ipauth',
+      description='vantiv implementations with samples',
       long_description=README + '\n\n',
       classifiers=[
                     "Programming Language :: Python",
