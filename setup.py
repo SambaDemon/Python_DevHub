@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -26,4 +26,5 @@ setup(name='vantiv',
       url='https://github.com/SambaDemon/Python_DevHub',
       keywords='vantiv',
       include_package_data=True,
+      packages=find_packages(),
       zip_safe=False)
