@@ -1,12 +1,10 @@
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 with open(os.path.join(here, 'README.md')) as f:
         README = f.read()
-
-requires = []
 
 setup(name='vantiv',
       version='0.1.0',
@@ -27,7 +25,5 @@ setup(name='vantiv',
       author='Aleksander Sukharev',
       url='https://github.com/SambaDemon/Python_DevHub',
       keywords='vantiv',
-      packages=find_packages(),
       include_package_data=True,
-      zip_safe=False,
-      install_requires=requires)
+      zip_safe=False)
