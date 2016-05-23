@@ -1,10 +1,11 @@
 from __future__ import absolute_import
-from .Authorization import Authorization
-from .AuthorizationCompletion import AuthorizationCompletion
-from .CaptureGivenAuth import CaptureGivenAuth
-from .Force import Force
-from .Credit import Credit
-from .Return import Return
-from .Sale import Sale
-from .Reversal import Reversal
-from .Void import Void
+from .model import (
+    Authorization,
+    AuthorizationCompletion,
+    CaptureGivenAuth,
+    Force,
+    Credit,
+    Return,
+    Sale,
+    Reversal,
+     Void)

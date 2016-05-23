@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from .SampleTests import *
+from .sampletests import *
 from .request.Config import Config
 
 ###-----------------------CONFIGURE THE API------------------------###
@@ -41,10 +41,10 @@ from .request.Config import Config
 #sampleCheckVoid()
 
 #  SERVICES
-sampleCreatePlan()
-sampleFraudCheck()
-samplePaymentAccountCreate()
-sampleScheduledTaskDelete()
-sampleScheduledTaskUpdate()
+#sampleCreatePlan()
+#sampleFraudCheck()
+#samplePaymentAccountCreate()
+#sampleScheduledTaskDelete()
+#sampleScheduledTaskUpdate()
 samplePaymentAccountUpdate()
-sampleUpdatePlan()
+#sampleUpdatePlan()
