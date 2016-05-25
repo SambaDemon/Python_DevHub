@@ -1,5 +1,4 @@
-
-def RemoveFromJson(dictionary):
+def remove_from_json(dictionary):
     if 'url' in dictionary.keys():
         del dictionary['url']
     if 'method' in dictionary.keys():
@@ -9,7 +8,7 @@ def RemoveFromJson(dictionary):
         return dictionary
 
 
-def Frozen(set):
+def frozen(set):
     def set_attr(self, name, value):
         if hasattr(self, name):
             set(self, name, value)
@@ -18,7 +17,7 @@ def Frozen(set):
     return set_attr
 
 
-def getTransactionID(response):
+def get_transaction_id(response):
     response = response.decode('utf-8')
     key = 'TransactionID\":\"'
     location = response.find(key)
@@ -28,7 +27,7 @@ def getTransactionID(response):
     return value
 
 
-def getValueFromKey(response, key):
+def get_value_from_key(response, key):
     response = response.decode('utf-8')
     key = key + '\":\"'
     location = response.find(key)
