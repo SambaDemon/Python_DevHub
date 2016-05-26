@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields
 
 
-class Authorization (Schema):
+class AuthorizationSchema (Schema):
     Address = fields.Nested("Address")
     AdvancedFraudChecks = None
     Applepay = None
@@ -24,7 +24,7 @@ class Authorization (Schema):
     Wallet = None
 
 
-class AuthorizationCompletion (Schema):
+class AuthorizationCompletionSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     EnhancedData = None
@@ -33,7 +33,7 @@ class AuthorizationCompletion (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class CaptureGivenAuth (Schema):
+class CaptureGivenAuthSchema (Schema):
     Address = fields.Nested("Address")
     Application = fields.Nested("Application")
     Bml = None
@@ -49,7 +49,7 @@ class CaptureGivenAuth (Schema):
     Visa = None
 
 
-class Credit (Schema):
+class CreditSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     CustomBilling = None
@@ -60,7 +60,7 @@ class Credit (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class Force (Schema):
+class ForceSchema (Schema):
     Address = fields.Nested("Address")
     Application = fields.Nested("Application")
     Card = fields.Nested("Card")
@@ -74,7 +74,7 @@ class Force (Schema):
     Visa = None
 
 
-class Return (Schema):
+class ReturnSchema (Schema):
     Address = fields.Nested("Address")
     Application = fields.Nested("Application")
     Bml = None
@@ -89,7 +89,7 @@ class Return (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class Reversal (Schema):
+class ReversalSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     PayPal = None
@@ -97,7 +97,7 @@ class Reversal (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class Sale (Schema):
+class SaleSchema (Schema):
     Address = fields.Nested("Address")
     AdvancedFraudChecks = None
     Applepay = None
@@ -121,9 +121,8 @@ class Sale (Schema):
     Wallet = None
 
 
-class Void (Schema):
+class VoidSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     Reports = fields.Nested("Reports")
     Transaction = fields.Transaction("Transaction")
-
