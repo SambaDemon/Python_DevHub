@@ -1,5 +1,5 @@
 import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
 
 class Address(object):
     BillingName = None
@@ -538,4 +538,4 @@ class Address(object):
     ShippingCountryEnum.RS = "RS"
     ShippingCountryEnum.ME = "ME"
     ShippingCountryEnum.SS = "SS"
-    __setattr__=Frozen(object.__setattr__)
+    __setattr__ = frozen(object.__setattr__)
