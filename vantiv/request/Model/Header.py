@@ -1,11 +1,10 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class Header(object):
     ApplicationData = None
     EphemeralPublicKey = None
     PublicKeyHash = None
     TransactionID = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

@@ -1,10 +1,9 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class AdvancedFraudResults(object):
     DeviceReviewStatus = None
     DeviceReputationScore = None
     TriggeredRule = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

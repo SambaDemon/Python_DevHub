@@ -1,5 +1,5 @@
-from . .Request import Request
-from . .Utilities import RemoveFromJson
+from . .request import Request
+from . .utilitie import remove_from_json
 
 
 class Authorization (Request):

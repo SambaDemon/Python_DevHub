@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class LegalEntity(object):
     Name = None
@@ -10,10 +10,5 @@ class LegalEntity(object):
     AnnualCreditCardSalesVolume = None
     HasAcceptedCreditCards = None
     YearsInBusiness = None
-    
 
-    
-
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+    __setattr__ = frozen(object.__setattr__)

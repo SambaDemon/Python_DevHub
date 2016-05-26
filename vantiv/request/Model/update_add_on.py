@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class UpdateAddOn(object):
     AddOnCode = None
@@ -7,6 +7,5 @@ class UpdateAddOn(object):
     Amount = None
     StartDate = None
     EndDate = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

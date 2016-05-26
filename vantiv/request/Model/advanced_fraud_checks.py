@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class AdvancedFraudChecks(object):
     ThreatMetrixSessionID = None
@@ -8,6 +8,5 @@ class AdvancedFraudChecks(object):
     CustomAttribute3 = None
     CustomAttribute4 = None
     CustomAttribute5 = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

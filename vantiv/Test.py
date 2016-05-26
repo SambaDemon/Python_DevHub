@@ -23,7 +23,7 @@ from .request.Config import Config
 #   Uncomment the #sample transaction below that you would like to test
 
 #  CREDIT
-#sampleCreditAuthorization()
+sampleCreditAuthorization()
 #sampleCreditAuthorizationCompletion()
 #sampleCreditCaptureGivenAuth()
 #sampleCreditCredit()
@@ -46,5 +46,5 @@ from .request.Config import Config
 #samplePaymentAccountCreate()
 #sampleScheduledTaskDelete()
 #sampleScheduledTaskUpdate()
-samplePaymentAccountUpdate()
+#samplePaymentAccountUpdate()
 #sampleUpdatePlan()
