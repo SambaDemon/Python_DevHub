@@ -1,8 +1,10 @@
 from . .request import Request
-from . .utilitie import remove_from_json
+from .schema import *
 
 
 class Authorization (Request):
+    __schema__ = AuthorizationSchema
+
     Address = None
     AdvancedFraudChecks = None
     Applepay = None
@@ -35,6 +37,8 @@ class Authorization (Request):
 
 
 class AuthorizationCompletion (Request):
+    __schema__ = AuthorizationCompletionSchema
+
     Application = None
     Credentials = None
     EnhancedData = None
@@ -53,6 +57,8 @@ class AuthorizationCompletion (Request):
 
 
 class CaptureGivenAuth (Request):
+    __schema__ = CaptureGivenAuthSchema
+
     Address = None
     Application = None
     Bml = None
@@ -78,6 +84,8 @@ class CaptureGivenAuth (Request):
 
 
 class Credit (Request):
+    __schema__ = CreditSchema
+
     Application = None
     Credentials = None
     CustomBilling = None
@@ -92,6 +100,8 @@ class Credit (Request):
 
 
 class Force (Request):
+    __schema__ = ForceSchema
+
     Address = None
     Application = None
     Card = None
@@ -109,6 +119,8 @@ class Force (Request):
 
 
 class Return (Request):
+    __schema__ = ReturnSchema
+
     Address = None
     Application = None
     Bml = None
@@ -127,6 +139,8 @@ class Return (Request):
 
 
 class Reversal (Request):
+    __schema__ = ReversalSchema
+
     Application = None
     Credentials = None
     PayPal = None
@@ -138,6 +152,8 @@ class Reversal (Request):
 
 
 class Sale (Request):
+    __schema__ = SaleSchema
+
     Address = None
     AdvancedFraudChecks = None
     Applepay = None
@@ -165,6 +181,8 @@ class Sale (Request):
 
 
 class Void (Request):
+    __schema__ = VoidSchema
+
     Application = None
     Credentials = None
     Reports = None
