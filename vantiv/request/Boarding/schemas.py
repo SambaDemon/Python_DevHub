@@ -1,23 +1,16 @@
 from marshmallow import Schema, fields
 
 
-class CreateLegalEntity (Schema):
+class CreateLegalEntitySchema (Schema):
 
-    Address = fileds.Nester("Address")
+    Address = fields.Nester("Address")
     Credentials = fields.Nested("Credentials")
-    LegalEntity =
+    LegalEntity = None
     Principal = None
     PrincipalArray = None
 
-    def __init__(self):
-        self.Address
-        super(CreateLegalEntity, self).__init__("boarding",
-                                                "services",
-                                                "createLegalEntity",
-                                                "POST")
 
-
-class CreateSubMerchant (Request):
+class CreateSubMerchantSchema (Schema):
 
     Address = None
     Credentials = None
@@ -26,38 +19,20 @@ class CreateSubMerchant (Request):
     PrimaryContact = None
     SubMerchantFunding = None
 
-    def __init__(self, entityID):
-        super(CreateSubMerchant, self).__init__("boarding",
-                                                "services",
-                                                "createSubMerchant",
-                                                "POST")
-        self.queryParams['entityID'] = entityID
+
+class RetrieveLegalEntitySchema (Schema):
+    pass
 
 
-class RetrieveLegalEntity (Request):
+class RetrieveMccListSchema (Schema):
+    pass
 
 
-class RetrieveMccList (Request):
-
-    def __init__(self):
-        super(RetrieveMccList, self).__init__("boarding",
-                                              "services",
-                                              "retrieveMccList",
-                                              "GET")
+class RetrieveSubMerchantSchema (Schema):
+    pass
 
 
-class RetrieveSubMerchant (Request):
-
-    def __init__(self, entityID, subMerchantID):
-        super(RetrieveSubMerchant, self).__init__("boarding",
-                                                  "services",
-                                                  "retrieveSubMerchant",
-                                                  "GET")
-        self.queryParams['entityID'] = entityID
-        self.queryParams['subMerchantID'] = subMerchantID
-
-
-class UpdateLegalEntity (Request):
+class UpdateLegalEntitySchema (Schema):
 
     Address = None
     BackgroundCheckFields = None
@@ -66,15 +41,8 @@ class UpdateLegalEntity (Request):
     Principal = None
     PrincipalArray = None
 
-    def __init__(self, entityID):
-        super(UpdateLegalEntity, self).__init__("boarding",
-                                                "services",
-                                                "updateLegalEntity",
-                                                "PUT")
-        self.queryParams['entityID'] = entityID
 
-
-class UpdateSubMerchant (Request):
+class UpdateSubMerchantSchema (Schema):
 
     Address = None
     Credentials = None
@@ -82,11 +50,3 @@ class UpdateSubMerchant (Request):
     Merchant = None
     PrimaryContact = None
     SubMerchantFunding = None
-
-    def __init__(self, entityID, subMerchantID):
-        super(UpdateSubMerchant, self).__init__("boarding",
-                                                "services",
-                                                "updateSubMerchant",
-                                                "PUT")
-        self.queryParams['entityID'] = entityID
-        self.queryParams['subMerchantID'] = subMerchantID
