@@ -1,7 +1,9 @@
 from . .Request import Request
+from .schemas import *
 
 
 class CreateLegalEntity (Request):
+    __schema__ = CreateLegalEntitySchema
 
     Address = None
     Credentials = None
@@ -17,6 +19,7 @@ class CreateLegalEntity (Request):
 
 
 class CreateSubMerchant (Request):
+    __schema__ = CreateSubMerchantSchema
 
     Address = None
     Credentials = None
@@ -34,6 +37,7 @@ class CreateSubMerchant (Request):
 
 
 class RetrieveLegalEntity (Request):
+    __schema__ = RetrieveLegalEntitySchema
 
     def __init__(self, entityID):
         super(RetrieveLegalEntity, self).__init__("boarding",
@@ -44,6 +48,7 @@ class RetrieveLegalEntity (Request):
 
 
 class RetrieveMccList (Request):
+    __schema__ = RetriveMccListSchema
 
     def __init__(self):
         super(RetrieveMccList, self).__init__("boarding",
@@ -53,6 +58,7 @@ class RetrieveMccList (Request):
 
 
 class RetrieveSubMerchant (Request):
+    __schema__ = RetrieveSubMerchantSchema
 
     def __init__(self, entityID, subMerchantID):
         super(RetrieveSubMerchant, self).__init__("boarding",
@@ -64,6 +70,7 @@ class RetrieveSubMerchant (Request):
 
 
 class UpdateLegalEntity (Request):
+    __schema__ = UpdateLegalEntitySchema
 
     Address = None
     BackgroundCheckFields = None
@@ -81,6 +88,7 @@ class UpdateLegalEntity (Request):
 
 
 class UpdateSubMerchant (Request):
+    __schema__ = UpdateSubMerchantSchema
 
     Address = None
     Credentials = None
