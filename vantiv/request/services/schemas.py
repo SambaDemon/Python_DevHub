@@ -1,71 +1,71 @@
 from marshmallow import Schema, fields
 
 
-class CreatePlanSchema(Schema):
-    Application = fields.nested('Application')
-    Credentials = None
-    Reports = None
+class CreatePlan (Schema):
+    Application = fields.Nested("Application")
+    Credentials = fields.Nested("Credentials")
+    Reports = fields.Nested("Reports")
     ScheduledTask = None
-    Transaction = None
+    Transaction = fields.Nested("Transaction")
 
 
-class FraudCheckSchema(Schema):
-    Address = None
+class FraudCheck (Schema):
+    Address = fields.Nested("Address")
     AdvancedFraudChecks = None
-    Application = None
-    Credentials = None
-    Reports = None
+    Application = fields.Nested("Application")
+    Credentials = fields.Nested("Credentials")
+    Reports = fields.Nested("Reports")
     ScheduledTask = None
-    Transaction = None
+    Transaction = fields.Nested("Transaction")
 
 
-class PaymentAccountCreateSchema(Schema):
+class PaymentAccountCreate (Schema):
     Applepay = None
-    Application = None
-    Card = None
+    Application = fields.Nested("Application")
+    Card = fields.Nested("Card")
     Credentials = None
     DemandDepositAccount = None
-    Reports = None
-    Transaction = None
+    Reports = fields.Nested("Reports")
+    Transaction = fields.Nested("Transaction")
 
 
-class PaymentAccountUpdateSchema(Schema):
-    Application = None
-    Card = None
-    Credentials = None
+class PaymentAccountUpdate (Schema):
+    Application = fields.Nested("Application")
+    Card = fields.Nested("Card")
+    Credentials = fields.Nested("Credentials")
     PaymentAccount = None
     Reports = None
-    Transaction = None
+    Transaction = fields.Nested("Transaction")
 
 
-class ScheduledTaskDeleteSchema(Schema):
-    Application = None
-    Credentials = None
+class ScheduledTaskDelete (Schema):
+    Application = fields.Nested("Application")
+    Credentials = fields.Nested("Credentials")
     Reports = None
     ScheduledTask = None
-    Transaction = None
+    Transaction = fields.Nested("Transaction")
 
 
-class ScheduledTaskUpdateSchema(Schema):
-    Address = None
-    Application = None
-    Card = None
-    Credentials = None
+class ScheduledTaskUpdate (Schema):
+    Address = fields.Nested("Address")
+    Application = fields.Nested("Application")
+    Card = fields.Nested("Card")
+    Credentials = fields.Nested("Credentials")
     PaymentAccount = None
-    Reports = None
+    Reports = fields.Nested("Reports")
     ScheduledTask = None
-    Transaction = None
+    Transaction = fields.Nested("Transaction")
 
 
-class TransactionQuerySchema(Schema):
-    Application = None
-    Card = None
-    Credentials = None
-    Reports = None
-    Transaction = None
+class TransactionQuery (Schema):
+    Application = fields.Nested("Application")
+    Card = fields.Nested("Card")
+    Credentials = fields.Nested("Credentials")
+    Reports = fields.Nested("Reports")
+    Transaction = fields.Nested("Transaction")
 
 
-class UpdatePlanSchema(Schema):
+class UpdatePlan (Schema):
     Application = None
     Credentials = None
     Reports = None
