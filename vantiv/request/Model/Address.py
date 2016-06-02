@@ -1,5 +1,5 @@
-import sys
 from . .utilities import frozen
+
 
 class Address(object):
     BillingName = None
@@ -30,9 +30,12 @@ class Address(object):
     ShippingPhone = None
     BillingCountry = None
     ShippingCountry = None
+
     class BillingCountryEnum(object):
+
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     BillingCountryEnum.USA = "USA"
     BillingCountryEnum.AF = "AF"
     BillingCountryEnum.AX = "AX"
@@ -284,9 +287,11 @@ class Address(object):
     BillingCountryEnum.RS = "RS"
     BillingCountryEnum.ME = "ME"
     BillingCountryEnum.SS = "SS"
+
     class ShippingCountryEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     ShippingCountryEnum.USA = "USA"
     ShippingCountryEnum.AF = "AF"
     ShippingCountryEnum.AX = "AX"
