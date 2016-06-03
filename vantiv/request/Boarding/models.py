@@ -1,5 +1,8 @@
 from . .Request import Request
-from .schemas import *
+from .schemas import (CreateLegalEntitySchema, CreateSubMerchantSchema,
+                      RetrieveLegalEntitySchema, RetrieveMccListSchema,
+                      RetrieveSubMerchantSchema, UpdateLegalEntitySchema,
+                      UpdateSubMerchantSchema)
 
 
 class CreateLegalEntity (Request):
@@ -48,7 +51,7 @@ class RetrieveLegalEntity (Request):
 
 
 class RetrieveMccList (Request):
-    __schema__ = RetriveMccListSchema
+    __schema__ = RetrieveMccListSchema
 
     def __init__(self):
         super(RetrieveMccList, self).__init__("boarding",
