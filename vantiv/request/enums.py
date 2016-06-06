@@ -1,3 +1,45 @@
+from marshmallow.fields import Field
+
+
+class EnumField(Field):
+    default_error_messages = {
+        'by_name': 'Invalid enum member {name}',
+        'by_value': 'Invalid enum value {value}'
+    }
+
+    def __init__(self, enum, by_value=False, *args, **kwargs):
+        self.enum = enum
+        self.by_value = by_value
+        super(EnumField, self).__init__(*args, **kwargs)
+
+    def _serialize(self, value, attr, obj):
+        if value is None:
+            return None
+
+        if self.by_value:
+            return value.value
+        else:
+            return value.name
+
+    def _deserialize(self, value, attr, data):
+        if self.by_value:
+            return self._deserialize_by_value(value, attr, data)
+        else:
+            return self._deserialize_by_name(value, attr, data)
+
+    def _deserialize_by_value(self, value, attr, data):
+        try:
+            return self.enum(value)
+        except ValueError:
+            self.fail('by_value', value=value)
+
+    def _deserialize_by_name(self, value, attr, data):
+        try:
+            return getattr(self.enum, value)
+        except AttributeError:
+            self.fail('by_name', name=value)
+
+
 class CountryEnum(object):
     USA = "USA"
     AF = "AF"
@@ -252,4 +294,118 @@ class CountryEnum(object):
     SS = "SS"
 
 
-country_enum = CountryEnum()
+class CardTypeEnum(object):
+    MC = "MC"
+    VI = "VI"
+    AX = "AX"
+    DC = "DC"
+    DI = "DI"
+    PP = "PP"
+    JC = "JC"
+    BL = "BL"
+    EC = "EC"
+    GC = "GC"
+    NONE = ""
+
+
+class TaxTypeIdentifierEnum(object):
+    UNKOWN = "00"
+    NATL_SALES = "01"
+    ST_SALES = "02"
+    CTY_SALES = "03"
+    LCL_SALES = "04"
+    MUN_SALES = "05"
+    OTHER = "06"
+    VAT = "10"
+    GST = "11"
+    PST = "12"
+    HST = "13"
+    QST = "14"
+    ROOM = "20"
+    OCCUPANCY = "21"
+    ENERGY = "22"
+
+
+class DeliveryTypeEnum(object):
+    CNC = "CNC"
+    DIG = "DIG"
+    PHY = "PHY"
+    SVC = "SVC"
+    TBD = "TBD"
+
+
+class CustomerTypeEnum(object):
+    NEW = "New"
+    EXISTING = "Existing"
+
+
+class CurrencyEnum(object):
+    AUD = "AUD"
+    CAD = "CAD"
+    CHF = "CHF"
+    DKK = "DKK"
+    EUR = "EUR"
+    GBP = "GBP"
+    HKD = "HKD"
+    JPY = "JPY"
+    NOK = "NOK"
+    NZD = "NZD"
+    SEK = "SEK"
+    SGD = "SGD"
+    USD = "USD"
+
+
+class ResidenceStatusEnum(object):
+    OWN = "Own"
+    RENT = "Rent"
+    OTHER = "Other"
+
+
+class RecycleByEnum(object):
+    MERCHANT = "Merchant"
+    LITLE = "Litle"
+    NONE = "None"
+
+
+class OrderSourceEnum(object):
+    ECOMMERCE = "ecommerce"
+    INSTALLMENT = "installment"
+    MAIL_ORDER = "mailorder"
+    RECURRING = "recurring"
+    RETAIL = "retail"
+    TELEPHONE = "telephone"
+    AUTH_3DS = "3dsAuthenticated"
+    ATTEMPTED_3DS = "3dsAttempted"
+    RECURRING_TEL = "recurringtel"
+    ECHECK_PPD = "echeckppd"
+    APPLEPAY = "applepay"
+
+
+class TaxTypeEnum(object):
+    PAYMENT = "payment"
+    FEE = "fee"
+
+
+class CapabilityEnum(object):
+    NOT_USED = "notused"
+    MAG_STRIPE = "magstripe"
+    KEYED_ONLY = "keyedonly"
+
+
+class EntryModeEnum(object):
+    NOT_USED = "notused"
+    KEYED = "keyed"
+    TRACK1 = "track1"
+    TRACK2 = "track2"
+    COMPLETE_READ = "completeread"
+
+
+class CardholderIDEnum(object):
+    SIGNATURE = "signature"
+    PIN = "pin"
+    NO_PIN = "nopin"
+    DIRECT_MARKET = "directmarket"
+
+
+class CapabilityOfCatTerminalEnum(object):
+    SELF_SERVICE = "self service"

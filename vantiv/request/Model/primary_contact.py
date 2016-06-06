@@ -1,15 +1,10 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class PrimaryContact(object):
     FirstName = None
     LastName = None
     Email = None
     Phone = None
-    
 
-    
-
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+    __setattr__ = frozen(object.__setattr__)

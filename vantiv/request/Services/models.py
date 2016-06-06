@@ -1,7 +1,17 @@
 from . .request import Request
+from .schemas import (CreatePlanSchema,
+                      FraudCheckSchema,
+                      PaymentAccountCreateSchema,
+                      PaymentAccountUpdateSchema,
+                      ScheduledTaskDeleteSchema,
+                      ScheduledTaskUpdateSchema,
+                      TransactionQuerySchema,
+                      UpdatePlanSchema)
 
 
-class CreatePlan (Request):
+class CreatePlan(Request):
+    __schema__ = CreatePlanSchema
+
     Application = None
     Credentials = None
     Reports = None
@@ -15,7 +25,9 @@ class CreatePlan (Request):
                                          "POST")
 
 
-class FraudCheck (Request):
+class FraudCheck(Request):
+    __schema__ = FraudCheckSchema
+
     Address = None
     AdvancedFraudChecks = None
     Application = None
@@ -31,7 +43,9 @@ class FraudCheck (Request):
                                          "POST")
 
 
-class PaymentAccountCreate (Request):
+class PaymentAccountCreate(Request):
+    __schema__ = PaymentAccountCreateSchema
+
     Applepay = None
     Application = None
     Card = None
@@ -47,7 +61,9 @@ class PaymentAccountCreate (Request):
                                                    "POST")
 
 
-class PaymentAccountUpdate (Request):
+class PaymentAccountUpdate(Request):
+    __schema__ = PaymentAccountUpdateSchema
+
     Application = None
     Card = None
     Credentials = None
@@ -62,7 +78,9 @@ class PaymentAccountUpdate (Request):
                                                    "POST")
 
 
-class ScheduledTaskDelete (Request):
+class ScheduledTaskDelete(Request):
+    __schema__ = ScheduledTaskDeleteSchema
+
     Application = None
     Credentials = None
     Reports = None
@@ -76,7 +94,9 @@ class ScheduledTaskDelete (Request):
                                                   "POST")
 
 
-class ScheduledTaskUpdate (Request):
+class ScheduledTaskUpdate(Request):
+    __schema__ = ScheduledTaskUpdateSchema
+
     Address = None
     Application = None
     Card = None
@@ -93,7 +113,9 @@ class ScheduledTaskUpdate (Request):
                                                   "POST")
 
 
-class TransactionQuery (Request):
+class TransactionQuery(Request):
+    __schema__ = TransactionQuerySchema
+
     Application = None
     Card = None
     Credentials = None
@@ -107,7 +129,9 @@ class TransactionQuery (Request):
                                                "POST")
 
 
-class UpdatePlan (Request):
+class UpdatePlan(Request):
+    __schema__ = UpdatePlanSchema
+
     Application = None
     Credentials = None
     Reports = None

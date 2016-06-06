@@ -19,13 +19,4 @@ class EnhancedData(object):
     LineItem = None
     DeliveryType = None
 
-    class DeliveryTypeEnum(object):
-        def __init__(self, value):
-            self.value = value
-
-    DeliveryTypeEnum.CNC = "CNC"
-    DeliveryTypeEnum.DIG = "DIG"
-    DeliveryTypeEnum.PHY = "PHY"
-    DeliveryTypeEnum.SVC = "SVC"
-    DeliveryTypeEnum.TBD = "TBD"
     __setattr__ = frozen(object.__setattr__)

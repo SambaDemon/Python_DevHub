@@ -1,7 +1,22 @@
+from marshmallow import Schema, fields
 from . .utilities import frozen
 
 
+class CardSchema(Schema):
+    CardNumber = fields.Integer()
+    ExpirationMonth = fields.Integer()
+    ExpirationYear = fields.Integer()
+    CVV = None
+    Track1Data = None
+    Track2Data = None
+    PaypageRegistrationID = None
+    AccountNumber = None
+    Type = None
+
+
 class Card(object):
+    __schema__ = CardSchema
+
     CardNumber = None
     ExpirationMonth = None
     ExpirationYear = None
@@ -12,19 +27,4 @@ class Card(object):
     AccountNumber = None
     Type = None
 
-    class TypeEnum(object):
-        def __init__(self, value):
-            self.value = value
-
-    TypeEnum.MC = "MC"
-    TypeEnum.VI = "VI"
-    TypeEnum.AX = "AX"
-    TypeEnum.DC = "DC"
-    TypeEnum.DI = "DI"
-    TypeEnum.PP = "PP"
-    TypeEnum.JC = "JC"
-    TypeEnum.BL = "BL"
-    TypeEnum.EC = "EC"
-    TypeEnum.GC = "GC"
-    TypeEnum.NONE = ""
     __setattr__ = frozen(object.__setattr__)
