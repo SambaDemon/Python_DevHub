@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 from . import (Credit, Check, Services, Model)
+from .enums import OrderSourceEnum
 
 
 def sampleCreditAuthorization():
@@ -19,7 +20,7 @@ def sampleCreditAuthorization():
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "10.00"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         authorizationRequest.Transaction = transaction
 
         card = Model.Card()

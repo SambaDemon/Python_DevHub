@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields
 
 
-class CreatePlan (Schema):
+class CreatePlanSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     Reports = fields.Nested("Reports")
@@ -9,7 +9,7 @@ class CreatePlan (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class FraudCheck (Schema):
+class FraudCheckSchema (Schema):
     Address = fields.Nested("Address")
     AdvancedFraudChecks = None
     Application = fields.Nested("Application")
@@ -19,7 +19,7 @@ class FraudCheck (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class PaymentAccountCreate (Schema):
+class PaymentAccountCreateSchema (Schema):
     Applepay = None
     Application = fields.Nested("Application")
     Card = fields.Nested("Card")
@@ -29,7 +29,7 @@ class PaymentAccountCreate (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class PaymentAccountUpdate (Schema):
+class PaymentAccountUpdateSchema (Schema):
     Application = fields.Nested("Application")
     Card = fields.Nested("Card")
     Credentials = fields.Nested("Credentials")
@@ -38,7 +38,7 @@ class PaymentAccountUpdate (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class ScheduledTaskDelete (Schema):
+class ScheduledTaskDeleteSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     Reports = None
@@ -46,7 +46,7 @@ class ScheduledTaskDelete (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class ScheduledTaskUpdate (Schema):
+class ScheduledTaskUpdateSchema (Schema):
     Address = fields.Nested("Address")
     Application = fields.Nested("Application")
     Card = fields.Nested("Card")
@@ -57,7 +57,7 @@ class ScheduledTaskUpdate (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class TransactionQuery (Schema):
+class TransactionQuerySchema (Schema):
     Application = fields.Nested("Application")
     Card = fields.Nested("Card")
     Credentials = fields.Nested("Credentials")
@@ -65,7 +65,7 @@ class TransactionQuery (Schema):
     Transaction = fields.Nested("Transaction")
 
 
-class UpdatePlan (Schema):
+class UpdatePlanSchema (Schema):
     Application = None
     Credentials = None
     Reports = None

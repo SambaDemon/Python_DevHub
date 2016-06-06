@@ -18,5 +18,6 @@ class Transaction(object):
     TransactionType = None
     OrderSource = None
     TaxType = None
+    OrderSource = None
 
     __setattr__ = frozen(object.__setattr__)
