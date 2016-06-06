@@ -1,7 +1,11 @@
 from . .Request import Request
+from .schemas import (CreditSchema, RedepositSchema, ReturnSchema,
+                      SaleSchema, VerificationSchema, VoidSchema)
 
 
 class Credit (Request):
+    __schema__ = CreditSchema
+
     Application = None
     Credentials = None
     CustomBilling = None
@@ -13,6 +17,8 @@ class Credit (Request):
 
 
 class Redeposit (Request):
+    __schema__ = RedepositSchema
+
     Application = None
     Credentials = None
     DemandDepositAccount = None
@@ -25,6 +31,8 @@ class Redeposit (Request):
 
 
 class Return (Request):
+    __schema__ = ReturnSchema
+
     Address = None
     Application = None
     Credentials = None
@@ -39,6 +47,8 @@ class Return (Request):
 
 
 class Sale (Request):
+    __schema__ = SaleSchema
+
     Address = None
     Application = None
     Credentials = None
@@ -53,6 +63,8 @@ class Sale (Request):
 
 
 class Verification (Request):
+    __schema__ = VerificationSchema
+
     Address = None
     Application = None
     Credentials = None
@@ -69,6 +81,8 @@ class Verification (Request):
 
 
 class Void (Request):
+    __schema__ = VoidSchema
+
     Application = None
     Credentials = None
     Reports = None

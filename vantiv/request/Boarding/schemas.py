@@ -34,19 +34,19 @@ class RetrieveSubMerchantSchema (Schema):
 
 class UpdateLegalEntitySchema (Schema):
 
-    Address = None
+    Address = fields.Nested("Address")
     BackgroundCheckFields = None
-    Credentials = None
+    Credentials = fields.Nested("Credentials")
     LegalEntity = None
-    Principal = None
+    Principal = fields.Nested("Principal")
     PrincipalArray = None
 
 
 class UpdateSubMerchantSchema (Schema):
 
-    Address = None
-    Credentials = None
+    Address = fields.Nested("Address")
+    Credentials = fields.Nested("Credentials")
     ECheck = None
-    Merchant = None
+    Merchant = fields.Nested("Merchant")
     PrimaryContact = None
     SubMerchantFunding = None
