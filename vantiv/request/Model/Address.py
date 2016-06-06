@@ -1,7 +1,43 @@
+from marshmallow import Schema, fields
+
 from . .utilities import frozen
+from . .enums import EnumField, CountryEnum
+
+
+class AddressSchema(Schema):
+    BillingName = fields.String()
+    BillingFirstName = fields.String()
+    BillingMiddleInitial = fields.String()
+    BillingLastName = fields.String()
+    BillingCompanyName = fields.String()
+    BillingAddress1 = fields.String()
+    BillingAddress2 = fields.String()
+    BillingAddress3 = fields.String()
+    BillingCity = fields.String()
+    BillingState = fields.String()
+    BillingZipcode = fields.Integer()
+    BillingEmail = fields.String()
+    BillingPhone = fields.String()
+    ShippingName = fields.String()
+    ShippingFirstName = fields.String()
+    ShippingMiddleInitial = fields.String()
+    ShippingLastName = fields.String()
+    ShippingCompanyName = fields.String()
+    ShippingAddress1 = fields.String()
+    ShippingAddress2 = fields.String()
+    ShippingAddress3 = fields.String()
+    ShippingCity = fields.String()
+    ShippingState = fields.String()
+    ShippingZipcode = fields.String()
+    ShippingEmail = fields.String()
+    ShippingPhone = fields.String()
+    BillingCountry = EnumField(CountryEnum)
+    ShippingCountry = EnumField(CountryEnum)
 
 
 class Address(object):
+    __schema__ = AddressSchema
+
     BillingName = None
     BillingFirstName = None
     BillingMiddleInitial = None
@@ -30,4 +66,5 @@ class Address(object):
     ShippingPhone = None
     BillingCountry = None
     ShippingCountry = None
+
     __setattr__ = frozen(object.__setattr__)
