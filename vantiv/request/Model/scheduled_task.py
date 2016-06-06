@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class ScheduledTask(object):
     ScheduledTaskID = None
@@ -26,6 +26,5 @@ class ScheduledTask(object):
     UpdateAddOn = None
     DeleteAddOnArray = None
     DeleteAddOn = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

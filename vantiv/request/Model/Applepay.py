@@ -1,11 +1,10 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class Applepay(object):
     Data = None
     Header = None
     Signature = None
     Version = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

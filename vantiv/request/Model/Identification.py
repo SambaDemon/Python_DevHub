@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class Identification(object):
     Ssn = None
@@ -15,14 +15,18 @@ class Identification(object):
     CustomerType = None
     IncomeCurrency = None
     ResidenceStatus = None
+
     class CustomerTypeEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     CustomerTypeEnum.NEW = "New"
     CustomerTypeEnum.EXISTING = "Existing"
+
     class IncomeCurrencyEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     IncomeCurrencyEnum.AUD = "AUD"
     IncomeCurrencyEnum.CAD = "CAD"
     IncomeCurrencyEnum.CHF = "CHF"
@@ -36,10 +40,12 @@ class Identification(object):
     IncomeCurrencyEnum.SEK = "SEK"
     IncomeCurrencyEnum.SGD = "SGD"
     IncomeCurrencyEnum.USD = "USD"
+
     class ResidenceStatusEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     ResidenceStatusEnum.OWN = "Own"
     ResidenceStatusEnum.RENT = "Rent"
     ResidenceStatusEnum.OTHER = "Other"
-    __setattr__=Frozen(object.__setattr__)
+    __setattr__ = frozen(object.__setattr__)

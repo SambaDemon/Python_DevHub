@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class Card(object):
     CardNumber = None
@@ -11,9 +11,11 @@ class Card(object):
     PaypageRegistrationID = None
     AccountNumber = None
     Type = None
+
     class TypeEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     TypeEnum.MC = "MC"
     TypeEnum.VI = "VI"
     TypeEnum.AX = "AX"
@@ -25,4 +27,4 @@ class Card(object):
     TypeEnum.EC = "EC"
     TypeEnum.GC = "GC"
     TypeEnum.NONE = ""
-    __setattr__=Frozen(object.__setattr__)
+    __setattr__ = frozen(object.__setattr__)

@@ -1,5 +1,8 @@
-from . .Request import Request
-from .schema import *
+from . .request import Request
+from .schemas import (AuthorizationSchema, AuthorizationCompletionSchema,
+                      CaptureGivenAuthSchema, CreditSchema,
+                      ForceSchema, ReturnSchema,
+                      ReversalSchema, SaleSchema, VoidSchema)
 
 
 class Authorization (Request):
@@ -33,7 +36,7 @@ class Authorization (Request):
             "payment",
             "credit",
             "authorization",
-         "POST")
+            "POST")
 
 
 class AuthorizationCompletion (Request):
@@ -53,7 +56,7 @@ class AuthorizationCompletion (Request):
             "payment",
             "credit",
             "authorizationCompletion",
-         "POST")
+            "POST")
 
 
 class CaptureGivenAuth (Request):
@@ -80,7 +83,7 @@ class CaptureGivenAuth (Request):
             "payment",
             "credit",
             "captureGivenAuth",
-         "POST")
+            "POST")
 
 
 class Credit (Request):

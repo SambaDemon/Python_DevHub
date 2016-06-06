@@ -1,22 +1,22 @@
 from __future__ import absolute_import
-from .request import SampleRequests
-from .request import Utilities
+from .request import sample_requests
+from .request import utilities
 
 
 def sampleCreditAuthorization():
-    authorization = SampleRequests.sampleCreditAuthorization()
+    authorization = sample_requests.sampleCreditAuthorization()
     response = authorization.send()
     return response
 
 
 def sampleCreditAuthorizationCompletion():
-    authorization = SampleRequests.sampleCreditAuthorization()
+    authorization = sample_requests.sampleCreditAuthorization()
     response = authorization.send()
     transactionID = Utilities.getTransactionID(response)
     transaction = Utilities.getValueFromKey(response, 'TransactionID')
 
     if(transactionID):
-        authorizationCompletion = SampleRequests\
+        authorizationCompletion = sample_requests\
             .sampleCreditAuthorizationCompletion(transactionID)
         response = authorizationCompletion.send()
         return response
@@ -27,18 +27,18 @@ def sampleCreditAuthorizationCompletion():
 
 
 def sampleCreditCaptureGivenAuth():
-    captureGivenAuth = SampleRequests.sampleCreditCaptureGivenAuth()
+    captureGivenAuth = sample_requests.sampleCreditCaptureGivenAuth()
     response = captureGivenAuth.send()
     return response
 
 
 def sampleCreditCredit():
-    sale = SampleRequests.sampleCreditSale()
+    sale = sample_requests.sampleCreditSale()
     response = sale.send()
     transactionID = Utilities.getTransactionID(response)
 
     if(transactionID):
-        credit = SampleRequests.sampleCreditCredit(transactionID)
+        credit = sample_requests.sampleCreditCredit(transactionID)
         response = credit.send()
         return response
 
@@ -47,24 +47,24 @@ def sampleCreditCredit():
 
 
 def sampleCreditForce():
-    force = SampleRequests.sampleCreditForce()
+    force = sample_requests.sampleCreditForce()
     response = force.send()
     return response
 
 
 def sampleCreditReturn():
-    return_ = SampleRequests.sampleCreditReturn()
+    return_ = sample_requests.sampleCreditReturn()
     response = return_.send()
     return response
 
 
 def sampleCreditReversal():
-    authorization = SampleRequests.sampleCreditAuthorization()
+    authorization = sample_requests.sampleCreditAuthorization()
     response = authorization.send()
     transactionID = Utilities.getTransactionID(response)
 
     if(transactionID):
-        reversal = SampleRequests.sampleCreditReversal(transactionID)
+        reversal = sample_requests.sampleCreditReversal(transactionID)
         response = reversal.send()
         return response
 
@@ -73,18 +73,18 @@ def sampleCreditReversal():
 
 
 def sampleCreditSale():
-    sale = SampleRequests.sampleCreditSale()
+    sale = sample_requests.sampleCreditSale()
     response = sale.send()
     return response
 
 
 def sampleCreditVoid():
-    sale = SampleRequests.sampleCreditSale()
+    sale = sample_requests.sampleCreditSale()
     response = sale.send()
     transactionID = Utilities.getTransactionID(response)
 
     if(transactionID):
-        void_ = SampleRequests.sampleCreditVoid(transactionID)
+        void_ = sample_requests.sampleCreditVoid(transactionID)
         response = void_.send()
         return response
 
@@ -93,12 +93,12 @@ def sampleCreditVoid():
 
 
 def sampleCheckCredit():
-    sale = SampleRequests.sampleCheckSale()
+    sale = sample_requests.sampleCheckSale()
     response = sale.send()
     transactionID = Utilities.getTransactionID(response)
 
     if(transactionID):
-        credit = SampleRequests.sampleCheckCredit(transactionID)
+        credit = sample_requests.sampleCheckCredit(transactionID)
         response = credit.send()
         return response
 
@@ -107,30 +107,30 @@ def sampleCheckCredit():
 
 
 def sampleCheckReturn():
-    return_ = SampleRequests.sampleCheckReturn()
+    return_ = sample_requests.sampleCheckReturn()
     response = return_.send()
     return response
 
 
 def sampleCheckSale():
-    sale = SampleRequests.sampleCheckSale()
+    sale = sample_requests.sampleCheckSale()
     response = sale.send()
     return response
 
 
 def sampleCheckVerification():
-    verification = SampleRequests.sampleCheckVerification()
+    verification = sample_requests.sampleCheckVerification()
     response = verification.send()
     return response
 
 
 def sampleCheckVoid():
-    sale = SampleRequests.sampleCheckSale()
+    sale = sample_requests.sampleCheckSale()
     response = sale.send()
     transactionID = Utilities.getTransactionID(response)
 
     if(transactionID):
-        void_ = SampleRequests.sampleCheckVoid(transactionID)
+        void_ = sample_requests.sampleCheckVoid(transactionID)
         response = void_.send()
         return response
 
@@ -139,42 +139,42 @@ def sampleCheckVoid():
 
 
 def sampleCreatePlan():
-    createPlan = SampleRequests.sampleServicesCreatePlan()
+    createPlan = sample_requests.sampleServicesCreatePlan()
     response = createPlan.send()
     return response
 
 
 def sampleFraudCheck():
-    fraudCheck = SampleRequests.sampleServicesFraudCheck()
+    fraudCheck = sample_requests.sampleServicesFraudCheck()
     response = fraudCheck.send()
     return response
 
 
 def samplePaymentAccountCreate():
-    paymentAccountCreate = SampleRequests.sampleServicesPaymentAccountCreate()
+    paymentAccountCreate = sample_requests.sampleServicesPaymentAccountCreate()
     response = paymentAccountCreate.send()
     return response
 
 
 def sampleScheduledTaskDelete():
-    scheduledTaskDelete = SampleRequests.sampleServicesScheduledTaskDelete()
+    scheduledTaskDelete = sample_requests.sampleServicesScheduledTaskDelete()
     response = scheduledTaskDelete.send()
     return response
 
 
 def sampleScheduledTaskUpdate():
-    scheduledTaskUpdate = SampleRequests.sampleServicesScheduledTaskUpdate()
+    scheduledTaskUpdate = sample_requests.sampleServicesScheduledTaskUpdate()
     response = scheduledTaskUpdate.send()
     return response
 
 
 def samplePaymentAccountUpdate():
-    paymentAccountUpdate = SampleRequests.sampleServicesPaymentAccountUpdate()
+    paymentAccountUpdate = sample_requests.sampleServicesPaymentAccountUpdate()
     response = paymentAccountUpdate.send()
     return response
 
 
 def sampleUpdatePlan():
-    updatePlan = SampleRequests.sampleServicesUpdatePlan()
+    updatePlan = sample_requests.sampleServicesUpdatePlan()
     response = updatePlan.send()
     return response

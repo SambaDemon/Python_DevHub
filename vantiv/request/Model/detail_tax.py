@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class DetailTax(object):
     TaxIncludedInTotal = None
@@ -7,9 +7,11 @@ class DetailTax(object):
     TaxRate = None
     AlternateTaxIdentifier = None
     TaxTypeIdentifier = None
+
     class TaxTypeIdentifierEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     TaxTypeIdentifierEnum.UNKOWN = "00"
     TaxTypeIdentifierEnum.NATL_SALES = "01"
     TaxTypeIdentifierEnum.ST_SALES = "02"
@@ -25,4 +27,5 @@ class DetailTax(object):
     TaxTypeIdentifierEnum.ROOM = "20"
     TaxTypeIdentifierEnum.OCCUPANCY = "21"
     TaxTypeIdentifierEnum.ENERGY = "22"
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

@@ -1,4 +1,4 @@
-from .Request import Request
+from . .request import Request
 
 
 class CreatePlan (Request):

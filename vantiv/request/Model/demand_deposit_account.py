@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class DemandDepositAccount(object):
     DDAAccountType = None
@@ -7,6 +7,5 @@ class DemandDepositAccount(object):
     RoutingNumber = None
     CheckNumber = None
     CCDPaymentInformation = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

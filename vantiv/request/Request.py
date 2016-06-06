@@ -1,6 +1,6 @@
 from __future__ import absolute_import
-from .Config import Config
-from .Utilities import RemoveFromJson
+from .config import Config
+from .utilities import remove_from_json
 from .. import jsonpickle
 import ssl
 import sys
@@ -13,7 +13,7 @@ else:
 
 class Request (object):
     def __getstate__(self):
-        body = RemoveFromJson(self.__dict__.copy())
+        body = remove_from_json(self.__dict__.copy())
         return body
 
     def __init__(self, category, proxy, endpoint, method):
@@ -29,7 +29,8 @@ class Request (object):
 
     def send(self):
         if (Config.doNotSend):
-            body = jsonpickle.encode(self, unpicklable=False)
+            import ipdb; ipdb.set_trace() # DEBUG
+            body = self.__schema__().dump(self)
             if (Config.printRequest):
                 print(body)
             return body

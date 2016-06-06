@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class FraudResult(object):
     AvsResult = None
@@ -7,6 +7,5 @@ class FraudResult(object):
     AuthenticationResult = None
     AdvancedAVSResult = None
     AdvancedFraudResults = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

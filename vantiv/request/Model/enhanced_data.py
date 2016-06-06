@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class EnhancedData(object):
     PurchaseOrder = None
@@ -18,12 +18,14 @@ class EnhancedData(object):
     LineItemArray = None
     LineItem = None
     DeliveryType = None
+
     class DeliveryTypeEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.value = value
+
     DeliveryTypeEnum.CNC = "CNC"
     DeliveryTypeEnum.DIG = "DIG"
     DeliveryTypeEnum.PHY = "PHY"
     DeliveryTypeEnum.SVC = "SVC"
     DeliveryTypeEnum.TBD = "TBD"
-    __setattr__=Frozen(object.__setattr__)
+    __setattr__ = frozen(object.__setattr__)

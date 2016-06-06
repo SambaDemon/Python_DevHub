@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class LineItem(object):
     ItemSequenceNumber = None
@@ -15,6 +15,5 @@ class LineItem(object):
     UnitCost = None
     DetailTaxArray = None
     DetailTax = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

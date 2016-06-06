@@ -3,7 +3,7 @@ from .application import Application
 from .reports import Reports
 from .transaction import Transaction
 from .fraud_result import FraudResult
-from .advanced_Fraud_Results import AdvancedFraudResults
+from .advanced_fraud_results import AdvancedFraudResults
 from .identification import Identification
 from .address import Address
 from .card import Card
@@ -22,7 +22,7 @@ from .line_item import LineItem
 from .recycling_request import RecyclingRequest
 from .scheduled_task import ScheduledTask
 from .create_discount import CreateDiscount
-from .Create_add_on import CreateAddOn
+from .create_add_on import CreateAddOn
 from .visa import Visa
 from .advanced_fraud_checks import AdvancedFraudChecks
 from .wallet import Wallet

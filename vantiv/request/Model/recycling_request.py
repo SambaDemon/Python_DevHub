@@ -1,13 +1,16 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class RecyclingRequest(object):
     RecycleID = None
     RecycleBy = None
+
     class RecycleByEnum(object):
         def __init__(self, value):
-            self.value=value
+            self.valuei = value
+
     RecycleByEnum.MERCHANT = "Merchant"
     RecycleByEnum.LITLE = "Litle"
     RecycleByEnum.NONE = "None"
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

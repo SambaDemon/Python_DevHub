@@ -125,4 +125,4 @@ class VoidSchema (Schema):
     Application = fields.Nested("Application")
     Credentials = fields.Nested("Credentials")
     Reports = fields.Nested("Reports")
-    Transaction = fields.Transaction("Transaction")
+    Transaction = fields.Nested("Transaction")

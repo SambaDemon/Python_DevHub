@@ -1,5 +1,5 @@
-import sys
-from . .Utilities import Frozen
+from . .utilities import frozen
+
 
 class PayPal(object):
     PayerID = None
@@ -7,6 +7,5 @@ class PayPal(object):
     TransactionID = None
     PayPalOrderComplete = None
     PayPalNotes = None
-    
-    
-    __setattr__=Frozen(object.__setattr__)
+
+    __setattr__ = frozen(object.__setattr__)

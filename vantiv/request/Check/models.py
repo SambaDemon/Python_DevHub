@@ -1,4 +1,4 @@
-from . .Request import Request
+from . .request import Request
 from .schemas import (CreditSchema, RedepositSchema, ReturnSchema,
                       SaleSchema, VerificationSchema, VoidSchema)
 
