@@ -1,4 +1,5 @@
 import os
+
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -27,4 +28,4 @@ setup(name='vantiv',
       keywords='vantiv',
       include_package_data=True,
       packages=find_packages(),
-      zip_safe=False)
+      zip_safe=False, requires=['marshmallow'])

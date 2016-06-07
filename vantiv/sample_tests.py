@@ -1,4 +1,5 @@
 from __future__ import absolute_import
+
 from .request import sample_requests
 from .request import utilities
 
@@ -12,11 +13,11 @@ def sampleCreditAuthorization():
 def sampleCreditAuthorizationCompletion():
     authorization = sample_requests.sampleCreditAuthorization()
     response = authorization.send()
-    transactionID = Utilities.getTransactionID(response)
-    transaction = Utilities.getValueFromKey(response, 'TransactionID')
+    transactionID = utilities.getTransactionID(response)
+    transaction = utilities.getValueFromKey(response, 'TransactionID')
 
-    if(transactionID):
-        authorizationCompletion = sample_requests\
+    if (transactionID):
+        authorizationCompletion = sample_requests \
             .sampleCreditAuthorizationCompletion(transactionID)
         response = authorizationCompletion.send()
         return response
@@ -35,9 +36,9 @@ def sampleCreditCaptureGivenAuth():
 def sampleCreditCredit():
     sale = sample_requests.sampleCreditSale()
     response = sale.send()
-    transactionID = Utilities.getTransactionID(response)
+    transactionID = utilities.getTransactionID(response)
 
-    if(transactionID):
+    if (transactionID):
         credit = sample_requests.sampleCreditCredit(transactionID)
         response = credit.send()
         return response
@@ -61,9 +62,9 @@ def sampleCreditReturn():
 def sampleCreditReversal():
     authorization = sample_requests.sampleCreditAuthorization()
     response = authorization.send()
-    transactionID = Utilities.getTransactionID(response)
+    transactionID = utilities.getTransactionID(response)
 
-    if(transactionID):
+    if (transactionID):
         reversal = sample_requests.sampleCreditReversal(transactionID)
         response = reversal.send()
         return response
@@ -81,9 +82,9 @@ def sampleCreditSale():
 def sampleCreditVoid():
     sale = sample_requests.sampleCreditSale()
     response = sale.send()
-    transactionID = Utilities.getTransactionID(response)
+    transactionID = utilities.getTransactionID(response)
 
-    if(transactionID):
+    if (transactionID):
         void_ = sample_requests.sampleCreditVoid(transactionID)
         response = void_.send()
         return response
@@ -95,9 +96,9 @@ def sampleCreditVoid():
 def sampleCheckCredit():
     sale = sample_requests.sampleCheckSale()
     response = sale.send()
-    transactionID = Utilities.getTransactionID(response)
+    transactionID = utilities.getTransactionID(response)
 
-    if(transactionID):
+    if (transactionID):
         credit = sample_requests.sampleCheckCredit(transactionID)
         response = credit.send()
         return response
@@ -127,9 +128,9 @@ def sampleCheckVerification():
 def sampleCheckVoid():
     sale = sample_requests.sampleCheckSale()
     response = sale.send()
-    transactionID = Utilities.getTransactionID(response)
+    transactionID = utilities.getTransactionID(response)
 
-    if(transactionID):
+    if (transactionID):
         void_ = sample_requests.sampleCheckVoid(transactionID)
         response = void_.send()
         return response

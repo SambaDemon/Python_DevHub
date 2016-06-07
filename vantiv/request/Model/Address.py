@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields
 
-from . .utilities import frozen
-from . .enums import EnumField, CountryEnum
+from ..enums import EnumField, CountryEnum
+from ..utilities import frozen
 
 
 class AddressSchema(Schema):
