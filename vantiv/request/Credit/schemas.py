@@ -2,110 +2,110 @@ from marshmallow import Schema, fields
 
 
 class AuthorizationSchema (Schema):
-    Address = fields.Nested("Address")
+    Address = fields.Nested("AddressSchema")
     AdvancedFraudChecks = None
     Applepay = None
-    Application = fields.Nested("Application")
+    Application = fields.Nested("ApplicationSchema")
     Bml = None
-    Card = fields.Nested("Card")
+    Card = fields.Nested("CardSchema")
     CardholderAuthentication = None
-    Credentials = fields.Nested("Credentials")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     EnhancedData = None
     Identification = None
     PayPal = None
     PaymentAccount = None
     RecyclingRequest = None
-    Reports = fields.Nested("Report")
+    Reports = fields.Nested("ReportSchema")
     ScheduledTask = None
     Terminal = None
-    Transaction = fields.Nested("Transaction")
+    Transaction = fields.Nested("TransactionSchema")
     Visa = None
     Wallet = None
 
 
 class AuthorizationCompletionSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     EnhancedData = None
     PayPal = None
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class CaptureGivenAuthSchema (Schema):
-    Address = fields.Nested("Address")
-    Application = fields.Nested("Application")
+    Address = fields.Nested("AddressSchema")
+    Application = fields.Nested("ApplicationSchema")
     Bml = None
-    Card = fields.Nested("Card")
-    Credentials = fields.Nested("Credentials")
+    Card = fields.Nested("CardSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     EnhancedData = None
     FraudResult = None
     PaymentAccount = None
-    Reports = fields.Nested("Reports")
+    Reports = fields.Nested("ReportsSchema")
     Terminal = None
-    Transaction = fields.Nested("Transaction")
+    Transaction = fields.Nested("TransactionSchema")
     Visa = None
 
 
 class CreditSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     EnhancedData = None
     PayPal = None
     Reports = None
     Terminal = None
-    Transaction = fields.Nested("Transaction")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class ForceSchema (Schema):
-    Address = fields.Nested("Address")
-    Application = fields.Nested("Application")
-    Card = fields.Nested("Card")
-    Credentials = fields.Nested("Credentials")
+    Address = fields.Nested("AddressSchema")
+    Application = fields.Nested("ApplicationSchema")
+    Card = fields.Nested("CardSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     EnhancedData = None
     PaymentAccount = None
-    Reports = fields.Nested("Repors")
+    Reports = fields.Nested("ReporsSchema")
     Terminal = None
-    Transaction = fields.Nested("Transaction")
+    Transaction = fields.Nested("TransactionSchema")
     Visa = None
 
 
 class ReturnSchema (Schema):
-    Address = fields.Nested("Address")
-    Application = fields.Nested("Application")
+    Address = fields.Nested("AddressSchema")
+    Application = fields.Nested("ApplicationSchema")
     Bml = None
-    Card = fields.Nested("Card")
-    Credentials = fields.Nested("Credentials")
+    Card = fields.Nested("CardSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     EnhancedData = None
     PayPal = None
     PaymentAccount = None
-    Reports = fields.Nested("Reports")
-    Terminal = fields.Nested("Terminal")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Terminal = fields.Nested("TerminalSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class ReversalSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     PayPal = None
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class SaleSchema (Schema):
-    Address = fields.Nested("Address")
+    Address = fields.Nested("AddressSchema")
     AdvancedFraudChecks = None
     Applepay = None
-    Application = fields.Nested("Application")
+    Application = fields.Nested("ApplicationSchema")
     Bml = None
-    Card = fields.Nested("Card")
+    Card = fields.Nested("CardSchema")
     CardholderAuthentication = None
-    Credentials = fields.Nested("Credentials")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     EnhancedData = None
     FraudCheck = None
@@ -113,16 +113,16 @@ class SaleSchema (Schema):
     PayPal = None
     PaymentAccount = None
     RecyclingRequest = None
-    Reports = fields.Nested("Reports")
+    Reports = fields.Nested("ReportsSchema")
     ScheduledTask = None
     Terminal = None
-    Transaction = fields.Nested("Transaction")
+    Transaction = fields.Nested("TransactionSchema")
     Visa = None
     Wallet = None
 
 
 class VoidSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")

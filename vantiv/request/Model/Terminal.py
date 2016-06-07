@@ -1,4 +1,4 @@
-from . .utilities import frozen
+from ..utilities import frozen
 
 
 class Terminal(object):

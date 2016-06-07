@@ -2,56 +2,56 @@ from marshmallow import Schema, fields
 
 
 class CreditSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class RedepositSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     DemandDepositAccount = None
     PaymentAccount = None
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class ReturnSchema (Schema):
-    Address = fields.Nested("Address")
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Address = fields.Nested("AddressSchema")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     DemandDepositAccount = None
     PaymentAccount = None
-    Reports = fields.Nested("Report")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class SaleSchema (Schema):
-    Address = fields.Nested("Address")
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Address = fields.Nested("AddressSchema")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     CustomBilling = None
     DemandDepositAccount = None
     PaymentAccount = None
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class VerificationSchema (Schema):
-    Address = fields.Nested("Address")
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
+    Address = fields.Nested("AddressSchema")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
     DemandDepositAccount = None
     PaymentAccount = None
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
 
 
 class VoidSchema (Schema):
-    Application = fields.Nested("Application")
-    Credentials = fields.Nested("Credentials")
-    Reports = fields.Nested("Reports")
-    Transaction = fields.Nested("Transaction")
+    Application = fields.Nested("ApplicationSchema")
+    Credentials = fields.Nested("CredentialsSchema")
+    Reports = fields.Nested("ReportsSchema")
+    Transaction = fields.Nested("TransactionSchema")
