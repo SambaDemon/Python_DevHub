@@ -14,7 +14,8 @@ def frozen(set):
             set(self, name, value)
         else:
             raise AttributeError("You cannot add attributes to %s" % self)
-    return set_attr
+    # return set_attr
+    return set
 
 
 def get_transaction_id(response):

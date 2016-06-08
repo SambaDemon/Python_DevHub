@@ -29,7 +29,6 @@ class Request (object):
 
     def send(self):
         if (Config.doNotSend):
-            import ipdb; ipdb.set_trace() # DEBUG
             body = self.__schema__().dump(self)
             if (Config.printRequest):
                 print(body)

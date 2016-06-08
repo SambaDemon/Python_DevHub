@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from . import (Credit, Check, Services, Model)
-from .enums import OrderSourceEnum
+from .enums import (OrderSourceEnum, CardTypeEnum)
 
 
 def sampleCreditAuthorization():
@@ -29,7 +29,7 @@ def sampleCreditAuthorization():
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Model.Card.TypeEnum.VI)
+        card.Type = (CardTypeEnum.VI)
         authorizationRequest.Card = card
 
         application = Model.Application()
