@@ -3,15 +3,15 @@ from marshmallow import Schema, fields
 from ..utilities import frozen
 
 
-class ReportsSchema(Schema):
+class ReportSchema(Schema):
     ReportGroup = fields.String()
     Affiliate = fields.String()
     Campaign = fields.String()
     MerchantGroupingID = fields.String()
 
 
-class Reports(object):
-    __schema__ = ReportsSchema
+class Report(object):
+    __schema__ = ReportSchema
 
     ReportGroup = None
     Affiliate = None

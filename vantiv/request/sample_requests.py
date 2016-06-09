@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from . import (Credit, Check, Services, Model)
-from .enums import (OrderSourceEnum, CardTypeEnum)
+from .enums import (OrderSourceEnum, CardTypeEnum, CountryEnum)
 
 
 def sampleCreditAuthorization():
@@ -26,7 +26,7 @@ def sampleCreditAuthorization():
         card = Model.Card()
 
         card.CardNumber = 4457010000000009
-        card.ExpirationMonth = 1 #01
+        card.ExpirationMonth = 1
         card.ExpirationYear = 16
         card.CVV = 349
         card.Type = CardTypeEnum.VI
@@ -111,7 +111,7 @@ def sampleCreditCaptureGivenAuth():
         transaction.TransactionAmount = "100.10"
         transaction.AuthorizationDate = "1111-11-11"
         transaction.ApprovalNumber = "1234"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         captureGivenAuthRequest.Transaction = transaction
 
         card = Model.Card()
@@ -120,7 +120,7 @@ def sampleCreditCaptureGivenAuth():
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Model.Card.TypeEnum.VI)
+        card.Type = CardTypeEnum.VI
         captureGivenAuthRequest.Card = card
 
         application = Model.Application()
@@ -174,7 +174,7 @@ def sampleCreditForce():
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         forceRequest.Transaction = transaction
 
         card = Model.Card()
@@ -183,7 +183,7 @@ def sampleCreditForce():
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Model.Card.TypeEnum.VI)
+        card.Type = CardTypeEnum.VI
         forceRequest.Card = card
 
         application = Model.Application()
@@ -211,7 +211,7 @@ def sampleCreditReturn():
 
         transaction.ReferenceNumber = "123"
         transaction.TransactionAmount = "10.00"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         returnRequest.Transaction = transaction
 
         card = Model.Card()
@@ -220,7 +220,7 @@ def sampleCreditReturn():
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Model.Card.TypeEnum.VI)
+        card.Type = CardTypeEnum.VI
         returnRequest.Card = card
 
         application = Model.Application()
@@ -248,7 +248,7 @@ def sampleCreditSale():
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         saleRequest.Transaction = transaction
 
         card = Model.Card()
@@ -257,7 +257,7 @@ def sampleCreditSale():
         card.ExpirationMonth = "01"
         card.ExpirationYear = "16"
         card.CVV = "349"
-        card.Type = (Model.Card.TypeEnum.VI)
+        card.Type = CardTypeEnum.VI
         saleRequest.Card = card
 
         application = Model.Application()
@@ -332,7 +332,7 @@ def sampleCheckReturn():
 
         transaction.ReferenceNumber = "708388073320126000"
         transaction.TransactionAmount = "12.56"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         returnRequest.Transaction = transaction
 
         demandDepositAccount = Model.DemandDepositAccount()
@@ -353,7 +353,7 @@ def sampleCheckReturn():
         address.BillingZipcode = "01803-3747"
         address.BillingEmail = "jdoe@litle.com"
         address.BillingPhone = "978-551-0040"
-        address.BillingCountry = (Model.Address.BillingCountryEnum.USA)
+        address.BillingCountry = CountryEnum.USA
         returnRequest.Address = address
 
         reports = Model.Reports()
@@ -381,7 +381,7 @@ def sampleCheckSale():
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         saleRequest.Transaction = transaction
 
         address = Model.Address()
@@ -393,7 +393,7 @@ def sampleCheckSale():
         address.BillingZipcode = "01803-3747"
         address.BillingEmail = "jdoe@litle.com"
         address.BillingPhone = "978-551-0040"
-        address.BillingCountry = (Model.Address.BillingCountryEnum.USA)
+        address.BillingCountry = CountryEnum.USA
         saleRequest.Address = address
 
         demandDepositAccount = Model.DemandDepositAccount()
@@ -433,7 +433,7 @@ def sampleCheckVerification():
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
-        transaction.OrderSource = (Model.Transaction.OrderSourceEnum.ECOMMERCE)
+        transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         verificationRequest.Transaction = transaction
 
         address = Model.Address()
@@ -445,7 +445,7 @@ def sampleCheckVerification():
         address.BillingZipcode = "01803-3747"
         address.BillingEmail = "jdoe@litle.com"
         address.BillingPhone = "978-551-0040"
-        address.BillingCountry = (Model.Address.BillingCountryEnum.USA)
+        address.BillingCountry = CountryEnum.USA
         verificationRequest.Address = address
 
         demandDepositAccount = Model.DemandDepositAccount()
