@@ -8,7 +8,7 @@ def sampleCreditAuthorization():
 
         credentials = Model.Credentials()
 
-        credentials.AcceptorID = "1147003"
+        credentials.AcceptorID = 1147003
         authorizationRequest.Credentials = credentials
 
         reports = Model.Reports()
@@ -18,28 +18,28 @@ def sampleCreditAuthorization():
 
         transaction = Model.Transaction()
 
-        transaction.ReferenceNumber = "1"
-        transaction.TransactionAmount = "10.00"
+        transaction.ReferenceNumber = 1
+        transaction.TransactionAmount = 10.00
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         authorizationRequest.Transaction = transaction
 
         card = Model.Card()
 
-        card.CardNumber = "4457010000000009"
-        card.ExpirationMonth = "01"
-        card.ExpirationYear = "16"
-        card.CVV = "349"
-        card.Type = (CardTypeEnum.VI)
+        card.CardNumber = 4457010000000009
+        card.ExpirationMonth = 1 #01
+        card.ExpirationYear = 16
+        card.CVV = 349
+        card.Type = CardTypeEnum.VI
         authorizationRequest.Card = card
 
         application = Model.Application()
 
-        application.ApplicationID = "1234"
+        application.ApplicationID = 1234
         authorizationRequest.Application = application
 
         return authorizationRequest
 
-
+"""
 def sampleCreditReversal(transactionID):
         reversalRequest = Credit.Reversal()
 
@@ -651,3 +651,4 @@ def sampleServicesUpdatePlan():
         updatePlanRequest.ScheduledTask = scheduledTask
 
         return updatePlanRequest
+"""

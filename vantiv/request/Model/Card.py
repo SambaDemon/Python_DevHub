@@ -1,17 +1,18 @@
 from marshmallow import Schema, fields
-from . .utilities import frozen
+from ..utilities import frozen
+from ..enums import EnumField, CardTypeEnum
 
 
 class CardSchema(Schema):
     CardNumber = fields.Integer()
     ExpirationMonth = fields.Integer()
     ExpirationYear = fields.Integer()
-    CVV = None
+    CVV = fields.Integer()
     Track1Data = None
     Track2Data = None
     PaypageRegistrationID = None
     AccountNumber = None
-    Type = None
+    Type = EnumField(CardTypeEnum, by_value=True)
 
 
 class Card(object):

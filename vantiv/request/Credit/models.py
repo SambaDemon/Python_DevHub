@@ -1,4 +1,4 @@
-from . .request import Request
+from ..request import Request
 from .schemas import (AuthorizationSchema, AuthorizationCompletionSchema,
                       CaptureGivenAuthSchema, CreditSchema,
                       ForceSchema, ReturnSchema,

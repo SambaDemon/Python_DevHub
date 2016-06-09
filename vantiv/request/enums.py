@@ -1,3 +1,4 @@
+from enum import Enum
 from marshmallow.fields import Field
 
 
@@ -40,7 +41,7 @@ class EnumField(Field):
             self.fail('by_name', name=value)
 
 
-class CountryEnum(object):
+class CountryEnum(Enum):
     USA = "USA"
     AF = "AF"
     AX = "AX"
@@ -294,7 +295,7 @@ class CountryEnum(object):
     SS = "SS"
 
 
-class CardTypeEnum(object):
+class CardTypeEnum(Enum):
     MC = "MC"
     VI = "VI"
     AX = "AX"
@@ -308,7 +309,7 @@ class CardTypeEnum(object):
     NONE = ""
 
 
-class TaxTypeIdentifierEnum(object):
+class TaxTypeIdentifierEnum(Enum):
     UNKOWN = "00"
     NATL_SALES = "01"
     ST_SALES = "02"
@@ -326,7 +327,7 @@ class TaxTypeIdentifierEnum(object):
     ENERGY = "22"
 
 
-class DeliveryTypeEnum(object):
+class DeliveryTypeEnum(Enum):
     CNC = "CNC"
     DIG = "DIG"
     PHY = "PHY"
@@ -334,12 +335,12 @@ class DeliveryTypeEnum(object):
     TBD = "TBD"
 
 
-class CustomerTypeEnum(object):
+class CustomerTypeEnum(Enum):
     NEW = "New"
     EXISTING = "Existing"
 
 
-class CurrencyEnum(object):
+class CurrencyEnum(Enum):
     AUD = "AUD"
     CAD = "CAD"
     CHF = "CHF"
@@ -355,19 +356,19 @@ class CurrencyEnum(object):
     USD = "USD"
 
 
-class ResidenceStatusEnum(object):
+class ResidenceStatusEnum(Enum):
     OWN = "Own"
     RENT = "Rent"
     OTHER = "Other"
 
 
-class RecycleByEnum(object):
+class RecycleByEnum(Enum):
     MERCHANT = "Merchant"
     LITLE = "Litle"
     NONE = "None"
 
 
-class OrderSourceEnum(object):
+class OrderSourceEnum(Enum):
     ECOMMERCE = "ecommerce"
     INSTALLMENT = "installment"
     MAIL_ORDER = "mailorder"
@@ -381,18 +382,18 @@ class OrderSourceEnum(object):
     APPLEPAY = "applepay"
 
 
-class TaxTypeEnum(object):
+class TaxTypeEnum(Enum):
     PAYMENT = "payment"
     FEE = "fee"
 
 
-class CapabilityEnum(object):
+class CapabilityEnum(Enum):
     NOT_USED = "notused"
     MAG_STRIPE = "magstripe"
     KEYED_ONLY = "keyedonly"
 
 
-class EntryModeEnum(object):
+class EntryModeEnum(Enum):
     NOT_USED = "notused"
     KEYED = "keyed"
     TRACK1 = "track1"
@@ -400,12 +401,12 @@ class EntryModeEnum(object):
     COMPLETE_READ = "completeread"
 
 
-class CardholderIDEnum(object):
+class CardholderIDEnum(Enum):
     SIGNATURE = "signature"
     PIN = "pin"
     NO_PIN = "nopin"
     DIRECT_MARKET = "directmarket"
 
 
-class CapabilityOfCatTerminalEnum(object):
+class CapabilityOfCatTerminalEnum(Enum):
     SELF_SERVICE = "self service"
