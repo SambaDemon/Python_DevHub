@@ -1,12 +1,12 @@
 from marshmallow import Schema, fields
 
-from . .Model.reports import ReportsSchema
-from . .Model.address import AddressSchema
-from . .Model.credentials import CredentialsSchema
-from . .Model.application import ApplicationSchema
-from . .Model.card import CardSchema
-from . .Model.transaction import TransactionSchema
-from . .Model.terminal import TerminalSchema
+from ..Model.reports import ReportsSchema
+from ..Model.address import AddressSchema
+from ..Model.credentials import CredentialsSchema
+from ..Model.application import ApplicationSchema
+from ..Model.card import CardSchema
+from ..Model.transaction import TransactionSchema
+from ..Model.terminal import TerminalSchema
 
 
 class AuthorizationSchema (Schema):
