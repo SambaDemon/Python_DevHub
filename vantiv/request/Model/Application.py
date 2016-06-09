@@ -9,6 +9,6 @@ class ApplicationSchema(Schema):
 class Application(object):
     __schema__ = ApplicationSchema
 
-    ApplicationID = 11470043
+    ApplicationID = None
 
     __setattr__ = frozen(object.__setattr__)

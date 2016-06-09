@@ -91,7 +91,7 @@ def sampleCreditAuthorizationCompletion(transactionID):
 
         return authorizationCompletionRequest
 
-"""
+
 def sampleCreditCaptureGivenAuth():
         captureGivenAuthRequest = Credit.CaptureGivenAuth()
 
@@ -651,4 +651,3 @@ def sampleServicesUpdatePlan():
         updatePlanRequest.ScheduledTask = scheduledTask
 
         return updatePlanRequest
-"""

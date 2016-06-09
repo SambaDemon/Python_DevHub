@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields
+from ..schemas import Schema, fields
 
 from ..Model.reports import ReportsSchema
 from ..Model.address import AddressSchema

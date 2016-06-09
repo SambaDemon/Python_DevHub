@@ -23,7 +23,7 @@ class Request (object):
 
     def send(self):
         if (Config.doNotSend):
-            body, error = self.__schema__().dump(self)
+            body, error = self.__schema__().dumps(self)
             if error:
                 raise AttributeError()
             if (Config.printRequest):
@@ -37,7 +37,7 @@ class Request (object):
                     queryParamString += key + "=" + value + "&"
                 queryParamString = queryParamString[:-1]
             url = self.url + queryParamString
-            body, error = self.__schema__().dump(self)
+            body, error = self.__schema__().dumps(self)
             if error:
                 raise AttributeError()
             if (Config.printRequest):
@@ -54,10 +54,9 @@ class Request (object):
                            'VANTIV license=' + "\"" + Config.license + "\"")
             req.add_header('Content-Type', 'application/json')
             context = ssl._create_unverified_context()
-            import ipdb; ipdb.set_trace() # DEBUG
             try:
                 resp = urllib.urlopen(req,
-                                      body.__str__().encode('UTF-8'),
+                                      body.encode('UTF-8'),
                                       context=context)
                 # code = resp.getcode()
                 contents = resp.read()
