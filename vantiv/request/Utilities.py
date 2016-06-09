@@ -5,7 +5,7 @@ def remove_from_json(dictionary):
         del dictionary['method']
     if 'queryParams' in dictionary.keys():
         del dictionary['queryParams']
-        return dictionary
+    return dictionary
 
 
 def frozen(set):
@@ -13,7 +13,7 @@ def frozen(set):
         if hasattr(self, name):
             set(self, name, value)
         else:
-            raise AttributeError("You cannot add attributes to %s" % self)
+            raise AttributeError("You cannot add attributesto %s" % self)
     # return set_attr
     return set
 

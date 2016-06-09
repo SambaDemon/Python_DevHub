@@ -1,14 +1,8 @@
 from __future__ import absolute_import
+import ssl
+import urllib.request as urllib
 from .config import Config
 from .utilities import remove_from_json
-from .. import jsonpickle
-import ssl
-import sys
-
-if sys.version_info.major < 3:
-    import urllib2 as urllib
-else:
-    import urllib.request as urllib
 
 
 class Request (object):
@@ -29,7 +23,9 @@ class Request (object):
 
     def send(self):
         if (Config.doNotSend):
-            body = self.__schema__().dump(self)
+            body, error = self.__schema__().dump(self)
+            if error:
+                raise AttributeError()
             if (Config.printRequest):
                 print(body)
             return body
@@ -41,7 +37,9 @@ class Request (object):
                     queryParamString += key + "=" + value + "&"
                 queryParamString = queryParamString[:-1]
             url = self.url + queryParamString
-            body = jsonpickle.encode(self, unpicklable=False)
+            body, error = self.__schema__().dump(self)
+            if error:
+                raise AttributeError()
             if (Config.printRequest):
                 print (body)
             if(Config.proxy):
@@ -56,13 +54,14 @@ class Request (object):
                            'VANTIV license=' + "\"" + Config.license + "\"")
             req.add_header('Content-Type', 'application/json')
             context = ssl._create_unverified_context()
+            import ipdb; ipdb.set_trace() # DEBUG
             try:
                 resp = urllib.urlopen(req,
-                                      body.encode('UTF-8'),
+                                      body.__str__().encode('UTF-8'),
                                       context=context)
-                code = resp.getcode()
+                # code = resp.getcode()
                 contents = resp.read()
-            except urllib.error.HTTPError as error:
+            except urllib.HTTPError as error:
                 contents = error.read()
             if (Config.printResponse):
                 print(contents)

@@ -39,7 +39,7 @@ def sampleCreditAuthorization():
 
         return authorizationRequest
 
-"""
+
 def sampleCreditReversal(transactionID):
         reversalRequest = Credit.Reversal()
 
@@ -91,7 +91,7 @@ def sampleCreditAuthorizationCompletion(transactionID):
 
         return authorizationCompletionRequest
 
-
+"""
 def sampleCreditCaptureGivenAuth():
         captureGivenAuthRequest = Credit.CaptureGivenAuth()
 
