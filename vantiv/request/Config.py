@@ -9,4 +9,4 @@ class Config:
     # debugging assistance
     printRequest = True
     printResponse = True
-    doNotSend = True
+    doNotSend = False
