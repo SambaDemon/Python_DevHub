@@ -1,9 +1,14 @@
 from marshmallow import Schema, fields
 
+from ..Models.address import AddressSchema
+from ..Models.credentials import CredentialsSchema
+from ..Models.principal import PrincipalSchema
+from ..Models.merchant import MerchantSchema
+
 
 class CreateLegalEntitySchema (Schema):
-    Address = fields.Nester("AddressSchema")
-    Credentials = fields.Nested("CredentialsSchema")
+    Address = fields.Nester(AddressSchema)
+    Credentials = fields.Nested(CredentialsSchema)
     LegalEntity = None
     Principal = None
     PrincipalArray = None
@@ -32,18 +37,18 @@ class RetrieveSubMerchantSchema (Schema):
 
 
 class UpdateLegalEntitySchema (Schema):
-    Address = fields.Nested("AddressSchema")
+    Address = fields.Nested(AddressSchema)
     BackgroundCheckFields = None
-    Credentials = fields.Nested("CredentialsSchema")
+    Credentials = fields.Nested(CredentialsSchema)
     LegalEntity = None
-    Principal = fields.Nested("PrincipalSchema")
+    Principal = fields.Nested(PrincipalSchema)
     PrincipalArray = None
 
 
 class UpdateSubMerchantSchema (Schema):
-    Address = fields.Nested("AddressSchema")
-    Credentials = fields.Nested("CredentialsSchema")
+    Address = fields.Nested(AddressSchema)
+    Credentials = fields.Nested(CredentialsSchema)
     ECheck = None
-    Merchant = fields.Nested("MerchantSchema")
+    Merchant = fields.Nested(MerchantSchema)
     PrimaryContact = None
     SubMerchantFunding = None
