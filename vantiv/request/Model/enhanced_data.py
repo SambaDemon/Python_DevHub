@@ -1,7 +1,29 @@
-from . .utilities import frozen
+from ..schemas import Schema, fields
+from ..utilities import frozen
+
+
+class EnhancedDataSchema(Schema):
+    PurchaseOrder = fields.String()
+    TaxAmount = fields.Decimal()
+    TaxExempt = fields.Decimal()
+    DiscountAmount = fields.Decimal()
+    FreightAmount = fields.Decimal()
+    DutyAmount = fields.String()
+    ShipFromPostalCode = fields.String()
+    DestinationPostalCode = fields.String()
+    DestinationCountryCode = fields.String()
+    InvoiceReferenceNumber = fields.String()
+    OrderDate = fields.Date()
+    DetailTaxArray = fields.String()
+    DetailTax = fields.String()
+    LineItemArray = fields.String()
+    LineItem = fields.String()
+    DeliveryType = fields.String()
 
 
 class EnhancedData(object):
+    __schema__ = EnhancedDataSchema
+
     PurchaseOrder = None
     TaxAmount = None
     TaxExempt = None

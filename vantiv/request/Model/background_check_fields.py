@@ -1,5 +1,5 @@
-from marshmallow import Schema, fields
-from . .utilities import frozen
+from ..schemas import Schema, fields
+from ..utilities import frozen
 
 
 class BackgroundCheckFieldsSchema(Schema):

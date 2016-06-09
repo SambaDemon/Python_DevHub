@@ -1,9 +1,9 @@
-from . .utilities import frozen
-from marshmallow import Schema, fields
+from ..schemas import Schema, fields
+from ..utilities import frozen
 
 
 class AdvancedFraudChecksSchema(Schema):
-    ThreatMetrixSessionID = fields.Integer()
+    ThreatMetrixSessionID = fields.String()
     CustomAttribute1 = fields.String()
     CustomAttribute2 = fields.String()
     CustomAttribute3 = fields.String()

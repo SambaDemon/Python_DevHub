@@ -1,11 +1,11 @@
-from . .utilities import frozen
-from marshmallow import Schema, fields
+from ..schemas import Schema, fields
+from ..utilities import frozen
 
 
 class AdvancedFraudResultsSchema(Schema):
-    DeviceReviewStatus = None
-    DeviceReputationScore = None
-    TriggeredRule = None
+    DeviceReviewStatus = fields.String()
+    DeviceReputationScore = fields.String()
+    TriggeredRule = fields.String()
 
 
 class AdvancedFraudResults(object):
