@@ -24,7 +24,7 @@ from .request.config import Config
 
 #  CREDIT
 sampleCreditAuthorization()
-#sampleCreditAuthorizationCompletion()
+sampleCreditAuthorizationCompletion()
 #sampleCreditCaptureGivenAuth()
 #sampleCreditCredit()
 #sampleCreditForce()
