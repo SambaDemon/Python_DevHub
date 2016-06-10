@@ -1,10 +1,10 @@
 from ..schemas import Schema, fields
 
-from ..Models.application import ApplicationSchema
-from ..Models.credentials import CredentialsSchema
-from ..Models.reports import ReportSchema
-from ..Models.transaction import TransactionSchema
-from ..Models.address import AddressSchema
+from ..Model.application import ApplicationSchema
+from ..Model.credentials import CredentialsSchema
+from ..Model.report import ReportSchema
+from ..Model.transaction import TransactionSchema
+from ..Model.address import AddressSchema
 
 
 class CreditSchema (Schema):

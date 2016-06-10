@@ -11,7 +11,7 @@ def sampleCreditAuthorization():
         credentials.AcceptorID = 1147003
         authorizationRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         authorizationRequest.Reports = reports
@@ -27,7 +27,7 @@ def sampleCreditAuthorization():
 
         card.CardNumber = 4457010000000009
         card.ExpirationMonth = 1
-        card.ExpirationYear = 16
+        card.ExpirationYear = 17
         card.CVV = 349
         card.Type = CardTypeEnum.VI
         authorizationRequest.Card = card
@@ -48,7 +48,7 @@ def sampleCreditReversal(transactionID):
         credentials.AcceptorID = "1147003"
         reversalRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         reversalRequest.Reports = reports
@@ -74,7 +74,7 @@ def sampleCreditAuthorizationCompletion(transactionID):
         credentials.AcceptorID = "1147003"
         authorizationCompletionRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         authorizationCompletionRequest.Reports = reports
@@ -100,7 +100,7 @@ def sampleCreditCaptureGivenAuth():
         credentials.AcceptorID = "1147003"
         captureGivenAuthRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         captureGivenAuthRequest.Reports = reports
@@ -139,7 +139,7 @@ def sampleCreditCredit(transactionID):
         credentials.AcceptorID = "1147003"
         creditRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         creditRequest.Reports = reports
@@ -165,7 +165,7 @@ def sampleCreditForce():
         credentials.AcceptorID = "1147003"
         forceRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         forceRequest.Reports = reports
@@ -202,7 +202,7 @@ def sampleCreditReturn():
         credentials.AcceptorID = "1147003"
         returnRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         returnRequest.Reports = reports
@@ -239,7 +239,7 @@ def sampleCreditSale():
         credentials.AcceptorID = "1147003"
         saleRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         saleRequest.Reports = reports
@@ -276,7 +276,7 @@ def sampleCreditVoid(transactionID):
         credentials.AcceptorID = "1147003"
         voidRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         voidRequest.Reports = reports
@@ -307,7 +307,7 @@ def sampleCheckCredit(transactionID):
         transaction.TransactionID = transactionID
         creditRequest.Transaction = transaction
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         creditRequest.Reports = reports
@@ -356,7 +356,7 @@ def sampleCheckReturn():
         address.BillingCountry = CountryEnum.USA
         returnRequest.Address = address
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         returnRequest.Reports = reports
@@ -408,7 +408,7 @@ def sampleCheckSale():
         paymentAccount.PaymentAccountID = "1232343454565"
         saleRequest.PaymentAccount = paymentAccount
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         saleRequest.Reports = reports
@@ -457,7 +457,7 @@ def sampleCheckVerification():
         demandDepositAccount.CCDPaymentInformation = "567"
         verificationRequest.DemandDepositAccount = demandDepositAccount
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         verificationRequest.Reports = reports
@@ -483,7 +483,7 @@ def sampleCheckVoid(transactionID):
         transaction.TransactionID = transactionID
         voidRequest.Transaction = transaction
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         voidRequest.Reports = reports
@@ -528,7 +528,7 @@ def sampleServicesFraudCheck():
         credentials.AcceptorID = "1147003"
         fraudCheckRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         fraudCheckRequest.Reports = reports
@@ -554,7 +554,7 @@ def sampleServicesPaymentAccountCreate():
         credentials.AcceptorID = "1147003"
         paymentAccountCreateRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         paymentAccountCreateRequest.Reports = reports
@@ -613,7 +613,7 @@ def sampleServicesPaymentAccountUpdate():
         credentials.AcceptorID = "1147003"
         paymentAccountUpdateRequest.Credentials = credentials
 
-        reports = Model.Reports()
+        reports = Model.Report()
 
         reports.ReportGroup = "1243"
         paymentAccountUpdateRequest.Reports = reports
