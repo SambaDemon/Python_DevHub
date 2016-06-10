@@ -24,27 +24,27 @@ from .request.config import Config
 
 #  CREDIT
 sampleCreditAuthorization()
-sampleCreditAuthorizationCompletion()
-sampleCreditCaptureGivenAuth()
-sampleCreditCredit()
-sampleCreditForce()
-sampleCreditReturn()
-sampleCreditReversal()
-sampleCreditSale()
-sampleCreditVoid()
-
-#  CHECK
-sampleCheckCredit()
-sampleCheckReturn()
-sampleCheckSale()
-sampleCheckVerification()
-sampleCheckVoid()
-
-# SERVICES
-sampleCreatePlan()
-sampleFraudCheck()
-samplePaymentAccountCreate()
-sampleScheduledTaskDelete()
-sampleScheduledTaskUpdate()
-samplePaymentAccountUpdate()
-sampleUpdatePlan()
+#sampleCreditAuthorizationCompletion()
+#sampleCreditCaptureGivenAuth()
+#sampleCreditCredit()
+#sampleCreditForce()
+#sampleCreditReturn()
+#sampleCreditReversal()
+#sampleCreditSale()
+#sampleCreditVoid()
+#
+##  CHECK
+#sampleCheckCredit()
+#sampleCheckReturn()
+#sampleCheckSale()
+#sampleCheckVerification()
+#sampleCheckVoid()
+#
+## SERVICES
+#sampleCreatePlan()
+#sampleFraudCheck()
+#samplePaymentAccountCreate()
+#sampleScheduledTaskDelete()
+#sampleScheduledTaskUpdate()
+#samplePaymentAccountUpdate()
+#sampleUpdatePlan()

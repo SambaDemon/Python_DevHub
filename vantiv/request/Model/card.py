@@ -4,9 +4,9 @@ from ..enums import EnumField, CardTypeEnum
 
 
 class CardSchema(Schema):
-    CardNumber = fields.Integer()
-    ExpirationMonth = fields.Integer()
-    ExpirationYear = fields.Integer()
+    CardNumber = fields.String()
+    ExpirationMonth = fields.String()
+    ExpirationYear = fields.String()
     CVV = fields.Integer()
     Track1Data = fields.String()
     Track2Data = fields.String()

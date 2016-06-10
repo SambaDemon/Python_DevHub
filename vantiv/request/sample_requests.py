@@ -19,15 +19,15 @@ def sampleCreditAuthorization():
         transaction = Model.Transaction()
 
         transaction.ReferenceNumber = 1
-        transaction.TransactionAmount = 10.00
+        transaction.TransactionAmount = "10.00"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         authorizationRequest.Transaction = transaction
 
         card = Model.Card()
 
         card.CardNumber = 4457010000000009
-        card.ExpirationMonth = 1
-        card.ExpirationYear = 17
+        card.ExpirationMonth = "01"
+        card.ExpirationYear = 16
         card.CVV = 349
         card.Type = CardTypeEnum.VI
         authorizationRequest.Card = card

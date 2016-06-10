@@ -1,6 +1,6 @@
 from ..schemas import Schema, fields
 
-from ..Model.reports import ReportSchema
+from ..Model.report import ReportSchema
 from ..Model.address import AddressSchema
 from ..Model.credentials import CredentialsSchema
 from ..Model.application import ApplicationSchema

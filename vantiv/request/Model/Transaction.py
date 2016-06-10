@@ -9,7 +9,7 @@ class TransactionSchema(Schema):
     ReferenceNumber = fields.Integer()
     AuthorizationDate = fields.Date()
     ApprovalNumber = fields.String()
-    TransactionAmount = fields.Decimal()
+    TransactionAmount = fields.String()
     TransactionID = fields.Integer()
     ConvenienceFeeAmount = fields.Decimal()
     PartialApprovedFlag = fields.Bool()
