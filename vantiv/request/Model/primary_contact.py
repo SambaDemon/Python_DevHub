@@ -1,7 +1,17 @@
-from . .utilities import frozen
+from ..schemas import Schema, fields
+from ..utilities import frozen
+
+
+class PrimaryContactSchema(Schema):
+    FirstName = fields.String()
+    LastName = fields.String()
+    Email = fields.String()
+    Phone = fields.String()
 
 
 class PrimaryContact(object):
+    __schema__ = PrimaryContactSchema
+
     FirstName = None
     LastName = None
     Email = None

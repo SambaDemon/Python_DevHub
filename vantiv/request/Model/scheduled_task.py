@@ -1,7 +1,37 @@
-from . .utilities import frozen
+from ..schemas import Schema, fields
+from ..utilities import frozen
+
+
+class ScheduledTaskSchema(Schema):
+    ScheduledTaskID = fields.String()
+    RunCycles = fields.String()
+    RunStartDate = fields.Date()
+    Amount = fields.Decimal()
+    CreateDiscountArray = fields.String()
+    CreateDiscount = fields.String()
+    CreateAddOnArray = fields.String()
+    CreateAddOn = fields.String()
+    SubscriptionID = fields.String()
+    Name = fields.String()
+    Description = fields.String()
+    RunFrequency = fields.String()
+    TrialRunCycles = fields.String()
+    TrialRunFrequency = fields.String()
+    Active = fields.String()
+    BillingDate = fields.Date()
+    UpdateDiscountArray = fields.String()
+    UpdateDiscount = fields.String()
+    DeleteDiscountArray = fields.String()
+    DeleteDiscount = fields.String()
+    UpdateAddOnArray = fields.String()
+    UpdateAddOn = fields.String()
+    DeleteAddOnArray = fields.String()
+    DeleteAddOn = fields.String()
 
 
 class ScheduledTask(object):
+    __schema__ = ScheduledTaskSchema
+
     ScheduledTaskID = None
     RunCycles = None
     RunStartDate = None

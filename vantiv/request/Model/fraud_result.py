@@ -1,7 +1,18 @@
-from . .utilities import frozen
+from ..schemas import Schema, fields
+from ..utilities import frozen
+
+
+class FraudResultSchema(Schema):
+    AvsResult = fields.String()
+    CardValidationResult = fields.String()
+    AuthenticationResult = fields.String()
+    AdvancedAVSResult = fields.String()
+    AdvancedFraudResults = fields.String()
 
 
 class FraudResult(object):
+    __schema__ = FraudResultSchema
+
     AvsResult = None
     CardValidationResult = None
     AuthenticationResult = None

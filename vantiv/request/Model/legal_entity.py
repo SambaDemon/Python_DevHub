@@ -1,5 +1,4 @@
-from marshmallow import Schema, fields
-
+from ..schemas import Schema, fields
 from ..utilities import frozen
 
 
@@ -11,7 +10,7 @@ class LegalEntitySchema(Schema):
     Phone = fields.String()
     AnnualCreditCardSalesVolume = fields.String()
     HasAcceptedCreditCards = fields.String()
-    YearsInBusiness = fields.String()
+    YearsInBusiness = fields.Int()
 
 
 class LegalEntity(object):

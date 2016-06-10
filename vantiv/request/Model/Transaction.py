@@ -1,27 +1,25 @@
-from marshmallow import Schema, fields
-
+from ..schemas import Schema, fields
 from ..utilities import frozen
-from ..enums import EnumField, OrderSourceEnum
+from ..enums import EnumField, OrderSourceEnum, TaxTypeEnum
 
 
 class TransactionSchema(Schema):
     CustomerID = fields.Integer()
-    PartialCapture = None
+    PartialCapture = fields.String()
     ReferenceNumber = fields.Integer()
-    AuthorizationDate = None
-    ApprovalNumber = None
+    AuthorizationDate = fields.Date()
+    ApprovalNumber = fields.String()
     TransactionAmount = fields.Decimal()
     TransactionID = fields.Integer()
-    ConvenienceFeeAmount = None
-    PartialApprovedFlag = None
-    FraudFilterOverride = None
-    SurchargeFee = None
-    ActionReason = None
-    Verify = None
-    TransactionType = None
+    ConvenienceFeeAmount = fields.Decimal()
+    PartialApprovedFlag = fields.Bool()
+    FraudFilterOverride = fields.Bool()
+    SurchargeFee = fields.String()
+    ActionReason = fields.String()
+    Verify = fields.String()
+    TransactionType = fields.String()
     OrderSource = EnumField(OrderSourceEnum, by_value=True)
-    TaxType = None
-    OrderSource = None
+    TaxType = EnumField(TaxTypeEnum, by_value=True)
 
 
 class Transaction(object):
@@ -43,6 +41,5 @@ class Transaction(object):
     TransactionType = None
     OrderSource = None
     TaxType = None
-    OrderSource = None
 
     __setattr__ = frozen(object.__setattr__)
