@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from .application import Application
-from .reports import Reports
+from .report import Report
 from .transaction import Transaction
 from .fraud_result import FraudResult
 from .advanced_fraud_results import AdvancedFraudResults

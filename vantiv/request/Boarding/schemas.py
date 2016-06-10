@@ -3,7 +3,7 @@ from ..Model.address import AddressSchema
 from ..Model.credentials import CredentialsSchema
 from ..Model.principal import PrincipalSchema
 from ..Model.legal_entity import LegalEntitySchema
-from ..Models.merchant import MerchantSchema
+from ..Model.merchant import MerchantSchema
 
 
 class CreateLegalEntitySchema (Schema):
