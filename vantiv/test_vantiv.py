@@ -22,29 +22,35 @@ from .request.config import Config
 
 #   Uncomment the #sample transaction below that you would like to test
 
+
 #  CREDIT
-sampleCreditAuthorization()
-#sampleCreditAuthorizationCompletion()
-#sampleCreditCaptureGivenAuth()
-#sampleCreditCredit()
-#sampleCreditForce()
-#sampleCreditReturn()
-#sampleCreditReversal()
-#sampleCreditSale()
-#sampleCreditVoid()
-#
-##  CHECK
-#sampleCheckCredit()
-#sampleCheckReturn()
-#sampleCheckSale()
-#sampleCheckVerification()
-#sampleCheckVoid()
-#
-## SERVICES
-#sampleCreatePlan()
-#sampleFraudCheck()
-#samplePaymentAccountCreate()
-#sampleScheduledTaskDelete()
-#sampleScheduledTaskUpdate()
-#samplePaymentAccountUpdate()
-#sampleUpdatePlan()
+def test_credits():
+    sampleCreditAuthorization()
+    sampleCreditAuthorizationCompletion()
+    sampleCreditCaptureGivenAuth()
+    sampleCreditCredit()
+    sampleCreditForce()
+    sampleCreditReturn()
+    sampleCreditReversal()
+    sampleCreditSale()
+    sampleCreditVoid()
+
+
+#  CHECK
+def test_checks():
+    sampleCheckCredit()
+    sampleCheckReturn()
+    sampleCheckSale()
+    sampleCheckVerification()
+    sampleCheckVoid()
+
+
+# SERVICES
+def test_services():
+    sampleCreatePlan()
+    sampleFraudCheck()
+    samplePaymentAccountCreate()
+    sampleScheduledTaskDelete()
+    sampleScheduledTaskUpdate()
+    samplePaymentAccountUpdate()
+    sampleUpdatePlan()
