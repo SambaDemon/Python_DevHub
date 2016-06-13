@@ -5,7 +5,7 @@ from ..enums import (EnumField, CapabilityEnum, EntryModeEnum,
 
 
 class TerminalSchema(Schema):
-    TerminalID = fields.Integer()
+    TerminalID = fields.String()
     Capability = EnumField(CapabilityEnum, by_value=True)
     EntryMode = EnumField(EntryModeEnum, by_value=True)
     CardholderID = EnumField(CardholderIDEnum, by_value=True)

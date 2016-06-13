@@ -14,7 +14,7 @@ class AddressSchema(Schema):
     BillingAddress3 = fields.String()
     BillingCity = fields.String()
     BillingState = fields.String()
-    BillingZipcode = fields.Integer()
+    BillingZipcode = fields.String()
     BillingEmail = fields.String()
     BillingPhone = fields.String()
     ShippingName = fields.String()

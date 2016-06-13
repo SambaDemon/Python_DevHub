@@ -1,5 +1,4 @@
-from marshmallow import Schema, fields
-
+from ..schemas import Schema, fields
 from ..utilities import frozen
 
 
