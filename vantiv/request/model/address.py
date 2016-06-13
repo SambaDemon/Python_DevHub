@@ -1,6 +1,6 @@
 from ..schemas import Schema, fields
 from ..enums import EnumField, CountryEnum
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class AddressSchema(Schema):
@@ -34,7 +34,7 @@ class AddressSchema(Schema):
     ShippingCountry = EnumField(CountryEnum)
 
 
-class Address(object):
+class Address(FrozenMixin):
     __schema__ = AddressSchema
 
     BillingName = None
@@ -65,5 +65,3 @@ class Address(object):
     ShippingPhone = None
     BillingCountry = None
     ShippingCountry = None
-
-    __setattr__ = frozen(object.__setattr__)

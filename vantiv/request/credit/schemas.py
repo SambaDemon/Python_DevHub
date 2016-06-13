@@ -1,12 +1,12 @@
 from ..schemas import Schema, fields
 
-from ..Model.report import ReportSchema
-from ..Model.address import AddressSchema
-from ..Model.credentials import CredentialsSchema
-from ..Model.application import ApplicationSchema
-from ..Model.card import CardSchema
-from ..Model.transaction import TransactionSchema
-from ..Model.terminal import TerminalSchema
+from ..model.report import ReportSchema
+from ..model.address import AddressSchema
+from ..model.credentials import CredentialsSchema
+from ..model.application import ApplicationSchema
+from ..model.card import CardSchema
+from ..model.transaction import TransactionSchema
+from ..model.terminal import TerminalSchema
 
 
 class AuthorizationSchema (Schema):

@@ -1,29 +1,29 @@
 from __future__ import absolute_import
-from . import (Credit, Check, Services, Model)
+from . import (credit, check, services, model)
 from .enums import (OrderSourceEnum, CardTypeEnum, CountryEnum)
 
 
-def sampleCreditAuthorization():
-        authorizationRequest = Credit.Authorization()
+def samplecreditAuthorization():
+        authorizationRequest = credit.Authorization()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = 1147003
         authorizationRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         authorizationRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = 1
         transaction.TransactionAmount = "10.00"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         authorizationRequest.Transaction = transaction
 
-        card = Model.Card()
+        card = model.Card()
 
         card.CardNumber = 4457010000000009
         card.ExpirationMonth = "01"
@@ -32,7 +32,7 @@ def sampleCreditAuthorization():
         card.Type = CardTypeEnum.VI
         authorizationRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = 1234
         authorizationRequest.Application = application
@@ -40,25 +40,25 @@ def sampleCreditAuthorization():
         return authorizationRequest
 
 
-def sampleCreditReversal(transactionID):
-        reversalRequest = Credit.Reversal()
+def samplecreditReversal(transactionID):
+        reversalRequest = credit.Reversal()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         reversalRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         reversalRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.TransactionID = transactionID
         reversalRequest.Transaction = transaction
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         reversalRequest.Application = application
@@ -66,25 +66,25 @@ def sampleCreditReversal(transactionID):
         return reversalRequest
 
 
-def sampleCreditAuthorizationCompletion(transactionID):
-        authorizationCompletionRequest = Credit.AuthorizationCompletion()
+def samplecreditAuthorizationCompletion(transactionID):
+        authorizationCompletionRequest = credit.AuthorizationCompletion()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         authorizationCompletionRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         authorizationCompletionRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.TransactionID = transactionID
         authorizationCompletionRequest.Transaction = transaction
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         authorizationCompletionRequest.Application = application
@@ -92,20 +92,20 @@ def sampleCreditAuthorizationCompletion(transactionID):
         return authorizationCompletionRequest
 
 
-def sampleCreditCaptureGivenAuth():
-        captureGivenAuthRequest = Credit.CaptureGivenAuth()
+def samplecreditCaptureGivenAuth():
+        captureGivenAuthRequest = credit.CaptureGivenAuth()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         captureGivenAuthRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         captureGivenAuthRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
@@ -114,7 +114,7 @@ def sampleCreditCaptureGivenAuth():
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         captureGivenAuthRequest.Transaction = transaction
 
-        card = Model.Card()
+        card = model.Card()
 
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
@@ -123,7 +123,7 @@ def sampleCreditCaptureGivenAuth():
         card.Type = CardTypeEnum.VI
         captureGivenAuthRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         captureGivenAuthRequest.Application = application
@@ -131,25 +131,25 @@ def sampleCreditCaptureGivenAuth():
         return captureGivenAuthRequest
 
 
-def sampleCreditCredit(transactionID):
-        creditRequest = Credit.Credit()
+def samplecreditCredit(transactionID):
+        creditRequest = credit.Credit()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         creditRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         creditRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.TransactionID = transactionID
         creditRequest.Transaction = transaction
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         creditRequest.Application = application
@@ -157,27 +157,27 @@ def sampleCreditCredit(transactionID):
         return creditRequest
 
 
-def sampleCreditForce():
-        forceRequest = Credit.Force()
+def samplecreditForce():
+        forceRequest = credit.Force()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         forceRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         forceRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         forceRequest.Transaction = transaction
 
-        card = Model.Card()
+        card = model.Card()
 
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
@@ -186,7 +186,7 @@ def sampleCreditForce():
         card.Type = CardTypeEnum.VI
         forceRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         forceRequest.Application = application
@@ -194,27 +194,27 @@ def sampleCreditForce():
         return forceRequest
 
 
-def sampleCreditReturn():
-        returnRequest = Credit.Return()
+def samplecreditReturn():
+        returnRequest = credit.Return()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         returnRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         returnRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "123"
         transaction.TransactionAmount = "10.00"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         returnRequest.Transaction = transaction
 
-        card = Model.Card()
+        card = model.Card()
 
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
@@ -223,7 +223,7 @@ def sampleCreditReturn():
         card.Type = CardTypeEnum.VI
         returnRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         returnRequest.Application = application
@@ -231,27 +231,27 @@ def sampleCreditReturn():
         return returnRequest
 
 
-def sampleCreditSale():
-        saleRequest = Credit.Sale()
+def samplecreditSale():
+        saleRequest = credit.Sale()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         saleRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         saleRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         saleRequest.Transaction = transaction
 
-        card = Model.Card()
+        card = model.Card()
 
         card.CardNumber = "4457010000000009"
         card.ExpirationMonth = "01"
@@ -260,7 +260,7 @@ def sampleCreditSale():
         card.Type = CardTypeEnum.VI
         saleRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         saleRequest.Application = application
@@ -268,25 +268,25 @@ def sampleCreditSale():
         return saleRequest
 
 
-def sampleCreditVoid(transactionID):
-        voidRequest = Credit.Void()
+def samplecreditVoid(transactionID):
+        voidRequest = credit.Void()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         voidRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         voidRequest.Reports = reports
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.TransactionID = transactionID
         voidRequest.Transaction = transaction
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         voidRequest.Application = application
@@ -294,25 +294,25 @@ def sampleCreditVoid(transactionID):
         return voidRequest
 
 
-def sampleCheckCredit(transactionID):
-        creditRequest = Check.Credit()
+def samplecheckcredit(transactionID):
+        creditRequest = check.credit()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         creditRequest.Credentials = credentials
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.TransactionID = transactionID
         creditRequest.Transaction = transaction
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         creditRequest.Reports = reports
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         creditRequest.Application = application
@@ -320,31 +320,31 @@ def sampleCheckCredit(transactionID):
         return creditRequest
 
 
-def sampleCheckReturn():
-        returnRequest = Check.Return()
+def samplecheckReturn():
+        returnRequest = check.Return()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         returnRequest.Credentials = credentials
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "708388073320126000"
         transaction.TransactionAmount = "12.56"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         returnRequest.Transaction = transaction
 
-        demandDepositAccount = Model.DemandDepositAccount()
+        demandDepositAccount = model.DemandDepositAccount()
 
-        demandDepositAccount.DDAAccountType = "Checking"
+        demandDepositAccount.DDAAccountType = "checking"
         demandDepositAccount.AccountNumber = "234"
         demandDepositAccount.RoutingNumber = "123234345"
-        demandDepositAccount.CheckNumber = "456"
+        demandDepositAccount.checkNumber = "456"
         demandDepositAccount.CCDPaymentInformation = "567"
         returnRequest.DemandDepositAccount = demandDepositAccount
 
-        address = Model.Address()
+        address = model.Address()
 
         address.BillingName = "John Smith"
         address.BillingAddress1 = "1 Main St."
@@ -356,12 +356,12 @@ def sampleCheckReturn():
         address.BillingCountry = CountryEnum.USA
         returnRequest.Address = address
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         returnRequest.Reports = reports
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         returnRequest.Application = application
@@ -369,22 +369,22 @@ def sampleCheckReturn():
         return returnRequest
 
 
-def sampleCheckSale():
-        saleRequest = Check.Sale()
+def samplecheckSale():
+        saleRequest = check.Sale()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         saleRequest.Credentials = credentials
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         saleRequest.Transaction = transaction
 
-        address = Model.Address()
+        address = model.Address()
 
         address.BillingName = "John Smith"
         address.BillingAddress1 = "1 Main St."
@@ -396,24 +396,24 @@ def sampleCheckSale():
         address.BillingCountry = CountryEnum.USA
         saleRequest.Address = address
 
-        demandDepositAccount = Model.DemandDepositAccount()
+        demandDepositAccount = model.DemandDepositAccount()
 
         demandDepositAccount.RoutingNumber = "123234345"
-        demandDepositAccount.DDAAccountType = "Checking"
-        demandDepositAccount.CheckNumber = "456"
+        demandDepositAccount.DDAAccountType = "checking"
+        demandDepositAccount.checkNumber = "456"
         saleRequest.DemandDepositAccount = demandDepositAccount
 
-        paymentAccount = Model.PaymentAccount()
+        paymentAccount = model.PaymentAccount()
 
         paymentAccount.PaymentAccountID = "1232343454565"
         saleRequest.PaymentAccount = paymentAccount
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         saleRequest.Reports = reports
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         saleRequest.Application = application
@@ -421,22 +421,22 @@ def sampleCheckSale():
         return saleRequest
 
 
-def sampleCheckVerification():
-        verificationRequest = Check.Verification()
+def samplecheckVerification():
+        verificationRequest = check.Verification()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         verificationRequest.Credentials = credentials
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.ReferenceNumber = "1"
         transaction.TransactionAmount = "100.10"
         transaction.OrderSource = OrderSourceEnum.ECOMMERCE
         verificationRequest.Transaction = transaction
 
-        address = Model.Address()
+        address = model.Address()
 
         address.BillingName = "John Smith"
         address.BillingAddress1 = "1 Main St."
@@ -448,21 +448,21 @@ def sampleCheckVerification():
         address.BillingCountry = CountryEnum.USA
         verificationRequest.Address = address
 
-        demandDepositAccount = Model.DemandDepositAccount()
+        demandDepositAccount = model.DemandDepositAccount()
 
-        demandDepositAccount.DDAAccountType = "Checking"
+        demandDepositAccount.DDAAccountType = "checking"
         demandDepositAccount.AccountNumber = "234"
         demandDepositAccount.RoutingNumber = "123234345"
-        demandDepositAccount.CheckNumber = "456"
+        demandDepositAccount.checkNumber = "456"
         demandDepositAccount.CCDPaymentInformation = "567"
         verificationRequest.DemandDepositAccount = demandDepositAccount
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         verificationRequest.Reports = reports
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         verificationRequest.Application = application
@@ -470,25 +470,25 @@ def sampleCheckVerification():
         return verificationRequest
 
 
-def sampleCheckVoid(transactionID):
-        voidRequest = Check.Void()
+def samplecheckVoid(transactionID):
+        voidRequest = check.Void()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         voidRequest.Credentials = credentials
 
-        transaction = Model.Transaction()
+        transaction = model.Transaction()
 
         transaction.TransactionID = transactionID
         voidRequest.Transaction = transaction
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         voidRequest.Reports = reports
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         voidRequest.Application = application
@@ -496,15 +496,15 @@ def sampleCheckVoid(transactionID):
         return voidRequest
 
 
-def sampleServicesCreatePlan():
-        createPlanRequest = Services.CreatePlan()
+def sampleservicesCreatePlan():
+        createPlanRequest = services.CreatePlan()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         createPlanRequest.Credentials = credentials
 
-        scheduledTask = Model.ScheduledTask()
+        scheduledTask = model.ScheduledTask()
 
         scheduledTask.Active = "true"
         scheduledTask.ScheduledTaskID = "12"
@@ -520,51 +520,51 @@ def sampleServicesCreatePlan():
         return createPlanRequest
 
 
-def sampleServicesFraudCheck():
-        fraudCheckRequest = Services.FraudCheck()
+def sampleservicesFraudcheck():
+        fraudcheckRequest = services.FraudCheck()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
-        fraudCheckRequest.Credentials = credentials
+        fraudcheckRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
-        fraudCheckRequest.Reports = reports
+        fraudcheckRequest.Reports = reports
 
-        advancedFraudChecks = Model.AdvancedFraudChecks()
+        advancedFraudchecks = model.AdvancedFraudChecks()
 
-        advancedFraudChecks.ThreatMetrixSessionID = "123"
-        fraudCheckRequest.AdvancedFraudChecks = advancedFraudChecks
+        advancedFraudchecks.ThreatMetrixSessionID = "123"
+        fraudcheckRequest.AdvancedFraudChecks = advancedFraudChecks
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
-        fraudCheckRequest.Application = application
+        fraudcheckRequest.Application = application
 
-        return fraudCheckRequest
+        return fraudcheckRequest
 
 
-def sampleServicesPaymentAccountCreate():
-        paymentAccountCreateRequest = Services.PaymentAccountCreate()
+def sampleservicesPaymentAccountCreate():
+        paymentAccountCreateRequest = services.PaymentAccountCreate()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         paymentAccountCreateRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         paymentAccountCreateRequest.Reports = reports
 
-        card = Model.Card()
+        card = model.Card()
 
         card.AccountNumber = "5454545454545454"
         paymentAccountCreateRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         paymentAccountCreateRequest.Application = application
@@ -572,15 +572,15 @@ def sampleServicesPaymentAccountCreate():
         return paymentAccountCreateRequest
 
 
-def sampleServicesScheduledTaskDelete():
-        scheduledTaskDeleteRequest = Services.ScheduledTaskDelete()
+def sampleservicesScheduledTaskDelete():
+        scheduledTaskDeleteRequest = services.ScheduledTaskDelete()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         scheduledTaskDeleteRequest.Credentials = credentials
 
-        scheduledTask = Model.ScheduledTask()
+        scheduledTask = model.ScheduledTask()
 
         scheduledTask.SubscriptionID = "12432463563564"
         scheduledTaskDeleteRequest.ScheduledTask = scheduledTask
@@ -588,15 +588,15 @@ def sampleServicesScheduledTaskDelete():
         return scheduledTaskDeleteRequest
 
 
-def sampleServicesScheduledTaskUpdate():
-        scheduledTaskUpdateRequest = Services.ScheduledTaskUpdate()
+def sampleservicesScheduledTaskUpdate():
+        scheduledTaskUpdateRequest = services.ScheduledTaskUpdate()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         scheduledTaskUpdateRequest.Credentials = credentials
 
-        scheduledTask = Model.ScheduledTask()
+        scheduledTask = model.ScheduledTask()
 
         scheduledTask.SubscriptionID = "12432463563564"
         scheduledTask.BillingDate = "2019-10-21"
@@ -605,30 +605,30 @@ def sampleServicesScheduledTaskUpdate():
         return scheduledTaskUpdateRequest
 
 
-def sampleServicesPaymentAccountUpdate():
-        paymentAccountUpdateRequest = Services.PaymentAccountUpdate()
+def sampleservicesPaymentAccountUpdate():
+        paymentAccountUpdateRequest = services.PaymentAccountUpdate()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         paymentAccountUpdateRequest.Credentials = credentials
 
-        reports = Model.Report()
+        reports = model.Report()
 
         reports.ReportGroup = "1243"
         paymentAccountUpdateRequest.Reports = reports
 
-        card = Model.Card()
+        card = model.Card()
 
         card.CVV = "123"
         paymentAccountUpdateRequest.Card = card
 
-        application = Model.Application()
+        application = model.Application()
 
         application.ApplicationID = "1234"
         paymentAccountUpdateRequest.Application = application
 
-        paymentAccount = Model.PaymentAccount()
+        paymentAccount = model.PaymentAccount()
 
         paymentAccount.PaymentAccountID = "1112000188575454"
         paymentAccountUpdateRequest.PaymentAccount = paymentAccount
@@ -636,15 +636,15 @@ def sampleServicesPaymentAccountUpdate():
         return paymentAccountUpdateRequest
 
 
-def sampleServicesUpdatePlan():
-        updatePlanRequest = Services.UpdatePlan()
+def sampleservicesUpdatePlan():
+        updatePlanRequest = services.UpdatePlan()
 
-        credentials = Model.Credentials()
+        credentials = model.Credentials()
 
         credentials.AcceptorID = "1147003"
         updatePlanRequest.Credentials = credentials
 
-        scheduledTask = Model.ScheduledTask()
+        scheduledTask = model.ScheduledTask()
 
         scheduledTask.Active = "false"
         scheduledTask.ScheduledTaskID = "12"

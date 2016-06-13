@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import frozen
 
 
 class DetailTaxSchema(Schema):

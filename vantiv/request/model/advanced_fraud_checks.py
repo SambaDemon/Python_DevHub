@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class AdvancedFraudChecksSchema(Schema):
@@ -11,7 +11,7 @@ class AdvancedFraudChecksSchema(Schema):
     CustomAttribute5 = fields.String()
 
 
-class AdvancedFraudChecks(object):
+class AdvancedFraudChecks(FrozenMixin):
     __schema__ = AdvancedFraudChecksSchema
 
     ThreatMetrixSessionID = None
@@ -20,5 +20,3 @@ class AdvancedFraudChecks(object):
     CustomAttribute3 = None
     CustomAttribute4 = None
     CustomAttribute5 = None
-
-    __setattr__ = frozen(object.__setattr__)

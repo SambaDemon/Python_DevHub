@@ -2,7 +2,7 @@ from __future__ import absolute_import
 import ssl
 import urllib.request as urllib
 from .config import Config
-from .utilities import remove_from_json
+from .utils import remove_from_json
 
 
 class Request (object):
