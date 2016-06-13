@@ -4,7 +4,7 @@ from . .utilities import frozen
 
 
 class CredentialsSchema(Schema):
-    AcceptorID = fields.Integer()
+    AcceptorID = fields.String()
 
 
 class Credentials(object):

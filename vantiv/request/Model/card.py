@@ -7,7 +7,7 @@ class CardSchema(Schema):
     CardNumber = fields.String()
     ExpirationMonth = fields.String()
     ExpirationYear = fields.String()
-    CVV = fields.Integer()
+    CVV = fields.String()
     Track1Data = fields.String()
     Track2Data = fields.String()
     PaypageRegistrationID = fields.String()
