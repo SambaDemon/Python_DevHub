@@ -1,0 +1,5 @@
+Contributors
+------------
+
+- Aleksander Sukharev <alexander.sukharev1@gmail.com>, 2016/06/13
+- Ruslan Neshcheret <tsruslan17@gmail.com>, 2016/06/13

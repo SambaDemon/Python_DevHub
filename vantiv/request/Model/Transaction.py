@@ -6,11 +6,11 @@ from ..enums import EnumField, OrderSourceEnum, TaxTypeEnum
 class TransactionSchema(Schema):
     CustomerID = fields.Integer()
     PartialCapture = fields.String()
-    ReferenceNumber = fields.Integer()
+    ReferenceNumber = fields.String()
     AuthorizationDate = fields.Date()
     ApprovalNumber = fields.String()
     TransactionAmount = fields.String()
-    TransactionID = fields.Integer()
+    TransactionID = fields.String()
     ConvenienceFeeAmount = fields.Decimal()
     PartialApprovedFlag = fields.Bool()
     FraudFilterOverride = fields.Bool()
