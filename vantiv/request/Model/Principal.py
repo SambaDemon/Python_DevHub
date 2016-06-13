@@ -1,7 +1,6 @@
-from marshmallow import Schema, fields
-
-from ..Model.address import AddressSchema
+from ..schemas import Schema, fields
 from ..utilities import frozen
+from ..Model.address import AddressSchema
 
 
 class PrincipalSchema(Schema):
