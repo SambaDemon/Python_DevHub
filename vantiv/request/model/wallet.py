@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class WalletSchema(Schema):
@@ -7,10 +7,8 @@ class WalletSchema(Schema):
     WalletSourceTypeID = fields.String()
 
 
-class Wallet(object):
+class Wallet(FrozenMixin):
     __schema__ = WalletSchema
 
     WalletSourceType = None
     WalletSourceTypeID = None
-
-    __setattr__ = frozen(object.__setattr__)

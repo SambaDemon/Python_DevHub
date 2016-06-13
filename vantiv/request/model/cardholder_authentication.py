@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class CardholderAuthenticationSchema(Schema):
@@ -9,12 +9,10 @@ class CardholderAuthenticationSchema(Schema):
     AuthenticatedByMerchant = fields.String()
 
 
-class CardholderAuthentication(object):
+class CardholderAuthentication(FrozenMixin):
     __schema__ = CardholderAuthenticationSchema
 
     AuthenticationValue = None
     AuthenticationTransactionID = None
     CustomerIpAddress = None
     AuthenticatedByMerchant = None
-
-    __setattr__ = frozen(object.__setattr__)

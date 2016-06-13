@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class FraudResultSchema(Schema):
@@ -10,7 +10,7 @@ class FraudResultSchema(Schema):
     AdvancedFraudResults = fields.String()
 
 
-class FraudResult(object):
+class FraudResult(FrozenMixin):
     __schema__ = FraudResultSchema
 
     AvsResult = None
@@ -18,5 +18,3 @@ class FraudResult(object):
     AuthenticationResult = None
     AdvancedAVSResult = None
     AdvancedFraudResults = None
-
-    __setattr__ = frozen(object.__setattr__)

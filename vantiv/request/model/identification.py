@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 from ..enums import (EnumField, CustomerTypeEnum, CurrencyEnum,
                      ResidenceStatusEnum)
 
@@ -20,7 +20,7 @@ class IdentificationSchema(Schema):
     ResidenceStatus = EnumField(ResidenceStatusEnum, by_value=True)
 
 
-class Identification(object):
+class Identification(FrozenMixin):
     Ssn = None
     BirthDate = None
     CustomerRegistrationDate = None
@@ -34,5 +34,3 @@ class Identification(object):
     CustomerType = None
     IncomeCurrency = None
     ResidenceStatus = None
-
-    __setattr__ = frozen(object.__setattr__)

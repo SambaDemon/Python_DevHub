@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class ScheduledTaskSchema(Schema):
@@ -29,7 +29,7 @@ class ScheduledTaskSchema(Schema):
     DeleteAddOn = fields.String()
 
 
-class ScheduledTask(object):
+class ScheduledTask(FrozenMixin):
     __schema__ = ScheduledTaskSchema
 
     ScheduledTaskID = None
@@ -56,5 +56,3 @@ class ScheduledTask(object):
     UpdateAddOn = None
     DeleteAddOnArray = None
     DeleteAddOn = None
-
-    __setattr__ = frozen(object.__setattr__)

@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class DetailTaxSchema(Schema):
@@ -10,7 +10,7 @@ class DetailTaxSchema(Schema):
     TaxTypeIdentifier = fields.String()
 
 
-class DetailTax(object):
+class DetailTax(FrozenMixin):
     __schema__ = DetailTaxSchema
 
     TaxIncludedInTotal = None
@@ -18,5 +18,3 @@ class DetailTax(object):
     TaxRate = None
     AlternateTaxIdentifier = None
     TaxTypeIdentifier = None
-
-    __setattr__ = frozen(object.__setattr__)

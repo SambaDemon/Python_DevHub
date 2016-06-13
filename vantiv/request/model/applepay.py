@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class ApplepaySchema(Schema):
@@ -9,12 +9,10 @@ class ApplepaySchema(Schema):
     Version = fields.String()
 
 
-class Applepay(object):
+class Applepay(FrozenMixin):
     __schema__ = ApplepaySchema
 
     Data = None
     Header = None
     Signature = None
     Version = None
-
-    __setattr__ = frozen(object.__setattr__)

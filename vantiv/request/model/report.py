@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class ReportSchema(Schema):
@@ -9,12 +9,10 @@ class ReportSchema(Schema):
     MerchantGroupingID = fields.String()
 
 
-class Report(object):
+class Report(FrozenMixin):
     __schema__ = ReportSchema
 
     ReportGroup = None
     Affiliate = None
     Campaign = None
     MerchantGroupingID = None
-
-    __setattr__ = frozen(object.__setattr__)

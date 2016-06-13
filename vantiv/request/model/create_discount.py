@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class CreateDiscountSchema(Schema):
@@ -10,7 +10,7 @@ class CreateDiscountSchema(Schema):
     EndDate = fields.Date()
 
 
-class CreateDiscount(object):
+class CreateDiscount(FrozenMixin):
     __schema__ = CreateDiscountSchema
 
     DiscountCode = None
@@ -18,5 +18,3 @@ class CreateDiscount(object):
     Amount = None
     StartDate = None
     EndDate = None
-
-    __setattr__ = frozen(object.__setattr__)

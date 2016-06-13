@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class CustomBillingSchema(Schema):
@@ -9,12 +9,10 @@ class CustomBillingSchema(Schema):
     City = fields.String()
 
 
-class CustomBilling(object):
+class CustomBilling(FrozenMixin):
     __schema__ = CustomBillingSchema
 
     PhoneNumber = None
     Descriptor = None
     Url = None
     City = None
-
-    __setattr__ = frozen(object.__setattr__)

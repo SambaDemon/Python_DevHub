@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 from ..enums import (EnumField, CapabilityEnum, EntryModeEnum,
                      CardholderIDEnum, CapabilityOfCatTerminalEnum)
 
@@ -13,7 +13,7 @@ class TerminalSchema(Schema):
                                         by_value=True)
 
 
-class Terminal(object):
+class Terminal(FrozenMixin):
     __schema__ = TerminalSchema
 
     TerminalID = None
@@ -21,5 +21,3 @@ class Terminal(object):
     EntryMode = None
     CardholderID = None
     CapabilityOfCatTerminal = None
-
-    __setattr__ = frozen(object.__setattr__)

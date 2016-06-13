@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class BmlSchema(Schema):
@@ -12,7 +12,7 @@ class BmlSchema(Schema):
     ItemCategoryCode = fields.String()
 
 
-class Bml(object):
+class Bml(FrozenMixin):
     __schema__ = BmlSchema
 
     MerchantID = None
@@ -22,5 +22,3 @@ class Bml(object):
     VirtualAuthenticationKeyPresenceIndicator = None
     VirtualAuthenticationKeyData = None
     ItemCategoryCode = None
-
-    __setattr__ = frozen(object.__setattr__)

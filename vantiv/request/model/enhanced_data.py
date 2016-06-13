@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class EnhancedDataSchema(Schema):
@@ -21,7 +21,7 @@ class EnhancedDataSchema(Schema):
     DeliveryType = fields.String()
 
 
-class EnhancedData(object):
+class EnhancedData(FrozenMixin):
     __schema__ = EnhancedDataSchema
 
     PurchaseOrder = None
@@ -40,5 +40,3 @@ class EnhancedData(object):
     LineItemArray = None
     LineItem = None
     DeliveryType = None
-
-    __setattr__ = frozen(object.__setattr__)

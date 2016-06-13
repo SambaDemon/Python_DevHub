@@ -1,14 +1,12 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class CredentialsSchema(Schema):
     AcceptorID = fields.String()
 
 
-class Credentials(object):
+class Credentials(FrozenMixin):
     __schema__ = CredentialsSchema
 
     AcceptorID = None
-
-    __setattr__ = frozen(object.__setattr__)

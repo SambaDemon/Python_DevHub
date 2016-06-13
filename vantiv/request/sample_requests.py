@@ -3,7 +3,7 @@ from . import (credit, check, services, model)
 from .enums import (OrderSourceEnum, CardTypeEnum, CountryEnum)
 
 
-def samplecreditAuthorization():
+def sampleCreditAuthorization():
         authorizationRequest = credit.Authorization()
 
         credentials = model.Credentials()
@@ -40,7 +40,7 @@ def samplecreditAuthorization():
         return authorizationRequest
 
 
-def samplecreditReversal(transactionID):
+def sampleCreditReversal(transactionID):
         reversalRequest = credit.Reversal()
 
         credentials = model.Credentials()
@@ -66,7 +66,7 @@ def samplecreditReversal(transactionID):
         return reversalRequest
 
 
-def samplecreditAuthorizationCompletion(transactionID):
+def sampleCreditAuthorizationCompletion(transactionID):
         authorizationCompletionRequest = credit.AuthorizationCompletion()
 
         credentials = model.Credentials()
@@ -92,7 +92,7 @@ def samplecreditAuthorizationCompletion(transactionID):
         return authorizationCompletionRequest
 
 
-def samplecreditCaptureGivenAuth():
+def sampleCreditCaptureGivenAuth():
         captureGivenAuthRequest = credit.CaptureGivenAuth()
 
         credentials = model.Credentials()
@@ -131,7 +131,7 @@ def samplecreditCaptureGivenAuth():
         return captureGivenAuthRequest
 
 
-def samplecreditCredit(transactionID):
+def sampleCreditCredit(transactionID):
         creditRequest = credit.Credit()
 
         credentials = model.Credentials()
@@ -157,7 +157,7 @@ def samplecreditCredit(transactionID):
         return creditRequest
 
 
-def samplecreditForce():
+def sampleCreditForce():
         forceRequest = credit.Force()
 
         credentials = model.Credentials()
@@ -194,7 +194,7 @@ def samplecreditForce():
         return forceRequest
 
 
-def samplecreditReturn():
+def sampleCreditReturn():
         returnRequest = credit.Return()
 
         credentials = model.Credentials()
@@ -231,7 +231,7 @@ def samplecreditReturn():
         return returnRequest
 
 
-def samplecreditSale():
+def sampleCreditSale():
         saleRequest = credit.Sale()
 
         credentials = model.Credentials()
@@ -268,7 +268,7 @@ def samplecreditSale():
         return saleRequest
 
 
-def samplecreditVoid(transactionID):
+def sampleCreditVoid(transactionID):
         voidRequest = credit.Void()
 
         credentials = model.Credentials()
@@ -294,8 +294,8 @@ def samplecreditVoid(transactionID):
         return voidRequest
 
 
-def samplecheckcredit(transactionID):
-        creditRequest = check.credit()
+def sampleCheckCredit(transactionID):
+        creditRequest = check.Credit()
 
         credentials = model.Credentials()
 
@@ -320,7 +320,7 @@ def samplecheckcredit(transactionID):
         return creditRequest
 
 
-def samplecheckReturn():
+def sampleCheckReturn():
         returnRequest = check.Return()
 
         credentials = model.Credentials()
@@ -340,7 +340,7 @@ def samplecheckReturn():
         demandDepositAccount.DDAAccountType = "checking"
         demandDepositAccount.AccountNumber = "234"
         demandDepositAccount.RoutingNumber = "123234345"
-        demandDepositAccount.checkNumber = "456"
+        demandDepositAccount.CheckNumber = "456"
         demandDepositAccount.CCDPaymentInformation = "567"
         returnRequest.DemandDepositAccount = demandDepositAccount
 
@@ -369,7 +369,7 @@ def samplecheckReturn():
         return returnRequest
 
 
-def samplecheckSale():
+def sampleCheckSale():
         saleRequest = check.Sale()
 
         credentials = model.Credentials()
@@ -400,7 +400,7 @@ def samplecheckSale():
 
         demandDepositAccount.RoutingNumber = "123234345"
         demandDepositAccount.DDAAccountType = "checking"
-        demandDepositAccount.checkNumber = "456"
+        demandDepositAccount.CheckNumber = "456"
         saleRequest.DemandDepositAccount = demandDepositAccount
 
         paymentAccount = model.PaymentAccount()
@@ -421,7 +421,7 @@ def samplecheckSale():
         return saleRequest
 
 
-def samplecheckVerification():
+def sampleCheckVerification():
         verificationRequest = check.Verification()
 
         credentials = model.Credentials()
@@ -453,7 +453,7 @@ def samplecheckVerification():
         demandDepositAccount.DDAAccountType = "checking"
         demandDepositAccount.AccountNumber = "234"
         demandDepositAccount.RoutingNumber = "123234345"
-        demandDepositAccount.checkNumber = "456"
+        demandDepositAccount.CheckNumber = "456"
         demandDepositAccount.CCDPaymentInformation = "567"
         verificationRequest.DemandDepositAccount = demandDepositAccount
 
@@ -470,7 +470,7 @@ def samplecheckVerification():
         return verificationRequest
 
 
-def samplecheckVoid(transactionID):
+def sampleCheckVoid(transactionID):
         voidRequest = check.Void()
 
         credentials = model.Credentials()
@@ -496,7 +496,7 @@ def samplecheckVoid(transactionID):
         return voidRequest
 
 
-def sampleservicesCreatePlan():
+def sampleServicesCreatePlan():
         createPlanRequest = services.CreatePlan()
 
         credentials = model.Credentials()
@@ -520,7 +520,7 @@ def sampleservicesCreatePlan():
         return createPlanRequest
 
 
-def sampleservicesFraudcheck():
+def sampleServicesFraudCheck():
         fraudcheckRequest = services.FraudCheck()
 
         credentials = model.Credentials()
@@ -533,9 +533,9 @@ def sampleservicesFraudcheck():
         reports.ReportGroup = "1243"
         fraudcheckRequest.Reports = reports
 
-        advancedFraudchecks = model.AdvancedFraudChecks()
+        advancedFraudChecks = model.AdvancedFraudChecks()
 
-        advancedFraudchecks.ThreatMetrixSessionID = "123"
+        advancedFraudChecks.ThreatMetrixSessionID = "123"
         fraudcheckRequest.AdvancedFraudChecks = advancedFraudChecks
 
         application = model.Application()
@@ -546,7 +546,7 @@ def sampleservicesFraudcheck():
         return fraudcheckRequest
 
 
-def sampleservicesPaymentAccountCreate():
+def sampleServicesPaymentAccountCreate():
         paymentAccountCreateRequest = services.PaymentAccountCreate()
 
         credentials = model.Credentials()
@@ -572,7 +572,7 @@ def sampleservicesPaymentAccountCreate():
         return paymentAccountCreateRequest
 
 
-def sampleservicesScheduledTaskDelete():
+def sampleServicesScheduledTaskDelete():
         scheduledTaskDeleteRequest = services.ScheduledTaskDelete()
 
         credentials = model.Credentials()
@@ -588,7 +588,7 @@ def sampleservicesScheduledTaskDelete():
         return scheduledTaskDeleteRequest
 
 
-def sampleservicesScheduledTaskUpdate():
+def sampleServicesScheduledTaskUpdate():
         scheduledTaskUpdateRequest = services.ScheduledTaskUpdate()
 
         credentials = model.Credentials()
@@ -605,7 +605,7 @@ def sampleservicesScheduledTaskUpdate():
         return scheduledTaskUpdateRequest
 
 
-def sampleservicesPaymentAccountUpdate():
+def sampleServicesPaymentAccountUpdate():
         paymentAccountUpdateRequest = services.PaymentAccountUpdate()
 
         credentials = model.Credentials()
@@ -636,7 +636,7 @@ def sampleservicesPaymentAccountUpdate():
         return paymentAccountUpdateRequest
 
 
-def sampleservicesUpdatePlan():
+def sampleServicesUpdatePlan():
         updatePlanRequest = services.UpdatePlan()
 
         credentials = model.Credentials()

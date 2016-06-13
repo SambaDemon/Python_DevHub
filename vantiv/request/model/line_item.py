@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class LineItemSchema(Schema):
@@ -18,7 +18,7 @@ class LineItemSchema(Schema):
     DetailTax = fields.String()
 
 
-class LineItem(object):
+class LineItem(FrozenMixin):
     __schema__ = LineItemSchema
 
     ItemSequenceNumber = None
@@ -34,5 +34,3 @@ class LineItem(object):
     UnitCost = None
     DetailTaxArray = None
     DetailTax = None
-
-    __setattr__ = frozen(object.__setattr__)

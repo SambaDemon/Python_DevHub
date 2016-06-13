@@ -1,7 +1,11 @@
-from . .utilities import frozen
+from ..schemas import Schema, fields
+from ..utils import FrozenMixin
 
 
-class DeleteDiscount(object):
+class DeleteDiscountSchema(Schema):
+    DiscountCode = fields.String()
+
+
+class DeleteDiscount(FrozenMixin):
+    __schema__ = DeleteDiscountSchema
     DiscountCode = None
-
-    __setattr__ = frozen(object.__setattr__)

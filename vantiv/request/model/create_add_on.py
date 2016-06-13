@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class CreateAddOnSchema(Schema):
@@ -10,7 +10,7 @@ class CreateAddOnSchema(Schema):
     EndDate = fields.Date()
 
 
-class CreateAddOn(object):
+class CreateAddOn(FrozenMixin):
     __schema__ = CreateAddOnSchema
 
     AddOnCode = None
@@ -18,5 +18,3 @@ class CreateAddOn(object):
     Amount = None
     StartDate = None
     EndDate = None
-
-    __setattr__ = frozen(object.__setattr__)

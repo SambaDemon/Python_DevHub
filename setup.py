@@ -9,23 +9,16 @@ with open(os.path.join(here, 'README.md')) as f:
 
 setup(name='vantiv',
       version='0.1.0',
-      description='vantiv implementations with samples',
+      description='vantiv SDK with samples',
       long_description=README + '\n\n',
       classifiers=[
-                    "Programming Language :: Python",
                     "Framework :: Any",
-                    "Programming Language :: Python",
-                    "Programming Language :: Python :: 2.6",
-                    "Programming Language :: Python :: 2.7",
-                    "Programming Language :: Python :: 3.1",
-                    "Programming Language :: Python :: 3.2",
-                    "Programming Language :: Python :: 3.3",
-                    "Programming Language :: Python :: 3.4",
                     "Programming Language :: Python :: 3.5",
                     ],
       author='Aleksander Sukharev',
-      url='https://github.com/SambaDemon/Python_DevHub',
+      author_email='alexander.sukharev1@gmail.com',
+      url='https://github.com/SambaDemon/python_vantiv.git',
       keywords='vantiv',
       include_package_data=True,
       packages=find_packages(),
-      zip_safe=False, requires=['marshmallow'])
+      zip_safe=False, requires=['marshmallow', 'simplejson'])

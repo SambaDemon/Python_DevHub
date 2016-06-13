@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class AdvancedFraudResultsSchema(Schema):
@@ -8,11 +8,9 @@ class AdvancedFraudResultsSchema(Schema):
     TriggeredRule = fields.String()
 
 
-class AdvancedFraudResults(object):
+class AdvancedFraudResults(FrozenMixin):
     __schema__ = AdvancedFraudResultsSchema
 
     DeviceReviewStatus = None
     DeviceReputationScore = None
     TriggeredRule = None
-
-    __setattr__ = frozen(object.__setattr__)

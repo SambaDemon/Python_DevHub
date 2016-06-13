@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class DemandDepositAccountSchema(Schema):
@@ -10,7 +10,7 @@ class DemandDepositAccountSchema(Schema):
     CCDPaymentInformation = fields.String()
 
 
-class DemandDepositAccount(object):
+class DemandDepositAccount(FrozenMixin):
     __schema__ = DemandDepositAccountSchema
 
     DDAAccountType = None
@@ -18,5 +18,3 @@ class DemandDepositAccount(object):
     RoutingNumber = None
     CheckNumber = None
     CCDPaymentInformation = None
-
-    __setattr__ = frozen(object.__setattr__)

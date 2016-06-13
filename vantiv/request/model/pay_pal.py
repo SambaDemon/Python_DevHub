@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class PayPalSchema(Schema):
@@ -10,7 +10,7 @@ class PayPalSchema(Schema):
     PayPalNotes = fields.String()
 
 
-class PayPal(object):
+class PayPal(FrozenMixin):
     __schema__ = PayPalSchema
 
     PayerID = None
@@ -18,5 +18,3 @@ class PayPal(object):
     TransactionID = None
     PayPalOrderComplete = None
     PayPalNotes = None
-
-    __setattr__ = frozen(object.__setattr__)

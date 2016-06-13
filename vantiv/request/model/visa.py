@@ -1,14 +1,12 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class VisaSchema(Schema):
     DebtRepayment = fields.String()
 
 
-class Visa(object):
+class Visa(FrozenMixin):
     __schema__ = VisaSchema
 
     DebtRepayment = None
-
-    __setattr__ = frozen(object.__setattr__)

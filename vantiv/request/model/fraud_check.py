@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from . .utilities import frozen
+from ..utils import FrozenMixin
 
 
 class FraudCheckSchema(Schema):
@@ -9,12 +9,10 @@ class FraudCheckSchema(Schema):
     AuthenticatedByMerchant = fields.Bool()
 
 
-class FraudCheck(object):
+class FraudCheck(FrozenMixin):
     __schema__ = FraudCheckSchema
 
     AuthenticationValue = None
     AuthenticationTransactionID = None
     CustomerIpAddress = None
     AuthenticatedByMerchant = None
-
-    __setattr__ = frozen(object.__setattr__)

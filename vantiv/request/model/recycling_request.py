@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 
 
 class RecyclingRequestSchema(Schema):
@@ -7,10 +7,8 @@ class RecyclingRequestSchema(Schema):
     RecycleBy = fields.String()
 
 
-class RecyclingRequest(object):
+class RecyclingRequest(FrozenMixin):
     __schema__ = RecyclingRequestSchema
 
     RecycleID = None
     RecycleBy = None
-
-    __setattr__ = frozen(object.__setattr__)

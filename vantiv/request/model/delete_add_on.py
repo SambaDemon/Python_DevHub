@@ -1,14 +1,12 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 
 
 class DeleteAddOnSchema(Schema):
     AddOnCode = fields.String()
 
 
-class DeleteAddOn(object):
+class DeleteAddOn(FrozenMixin):
     __schema__ = DeleteAddOnSchema
 
     AddOnCode = None
-
-    __setattr__ = frozen(object.__setattr__)

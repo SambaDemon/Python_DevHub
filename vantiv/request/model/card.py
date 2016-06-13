@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utils import frozen
+from ..utils import FrozenMixin
 from ..enums import EnumField, CardTypeEnum
 
 
@@ -15,7 +15,7 @@ class CardSchema(Schema):
     Type = EnumField(CardTypeEnum, by_value=True)
 
 
-class Card(object):
+class Card(FrozenMixin):
     __schema__ = CardSchema
 
     CardNumber = None
@@ -27,5 +27,3 @@ class Card(object):
     PaypageRegistrationID = None
     AccountNumber = None
     Type = None
-
-    __setattr__ = frozen(object.__setattr__)

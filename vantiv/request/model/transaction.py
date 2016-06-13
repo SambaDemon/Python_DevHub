@@ -1,5 +1,5 @@
 from ..schemas import Schema, fields
-from ..utilities import frozen
+from ..utils import FrozenMixin
 from ..enums import EnumField, OrderSourceEnum, TaxTypeEnum
 
 
@@ -22,7 +22,7 @@ class TransactionSchema(Schema):
     TaxType = EnumField(TaxTypeEnum, by_value=True)
 
 
-class Transaction(object):
+class Transaction(FrozenMixin):
     __schema__ = TransactionSchema
 
     CustomerID = None
@@ -41,5 +41,3 @@ class Transaction(object):
     TransactionType = None
     OrderSource = None
     TaxType = None
-
-    __setattr__ = frozen(object.__setattr__)
