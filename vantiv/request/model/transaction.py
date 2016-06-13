@@ -4,7 +4,7 @@ from ..enums import EnumField, OrderSourceEnum, TaxTypeEnum
 
 
 class TransactionSchema(Schema):
-    CustomerID = fields.Integer()
+    CustomerID = fields.String()
     PartialCapture = fields.String()
     ReferenceNumber = fields.String()
     AuthorizationDate = fields.Date()

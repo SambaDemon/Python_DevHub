@@ -1,21 +1,14 @@
-def remove_from_json(dictionary):
-    if 'url' in dictionary.keys():
-        del dictionary['url']
-    if 'method' in dictionary.keys():
-        del dictionary['method']
-    if 'queryParams' in dictionary.keys():
-        del dictionary['queryParams']
-    return dictionary
-
-
-def frozen(set):
-    def set_attr(self, name, value):
+class FrozenMixin:
+    def __setattr__(self, name, value):
         if hasattr(self, name):
-            set(self, name, value)
-        else:
-            raise AttributeError("You cannot add attributesto %s" % self)
-    # return set_attr
-    return set
+            return super().__setattr__(name, value)
+        raise AttributeError("You cannot add attributes to %s" % self)
+
+
+def remove_from_json(dictionary):
+    for key in ("url", "method", "queryParams"):
+        dictionary.pop(key, None)
+    return dictionary
 
 
 def get_transaction_id(response):
