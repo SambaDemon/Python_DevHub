@@ -8,7 +8,7 @@ with open(os.path.join(here, 'README.md')) as f:
         README = f.read()
 
 setup(name='vantiv',
-      version='0.1.0',
+      version='0.0.1',
       description='vantiv SDK with samples',
       long_description=README + '\n\n',
       classifiers=[
@@ -18,6 +18,7 @@ setup(name='vantiv',
       author='Aleksander Sukharev',
       author_email='alexander.sukharev1@gmail.com',
       url='https://github.com/SambaDemon/python_vantiv.git',
+
       keywords='vantiv',
       include_package_data=True,
       packages=find_packages(),
