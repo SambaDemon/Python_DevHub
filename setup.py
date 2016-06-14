@@ -4,16 +4,21 @@ from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-with open(os.path.join(here, 'README.md')) as f:
-        README = f.read()
+
+def read(fname):
+    with open(fname) as fp:
+        content = fp.read()
+    return content
+
 
 setup(name='vantiv',
-      version='0.0.4',
+      version='0.0.5',
       description='vantiv SDK with samples',
-      long_description=README + '\n\n',
+      long_description=read('README.md'),
+      license='MIT',
       classifiers=[
                     'Intended Audience :: Developers',
-                    'License :: MIT License',
+                    'License :: OSI Approved :: MIT License',
                     'Programming Language :: Python :: 3',
                     'Programming Language :: Python :: 3.3',
                     'Programming Language :: Python :: 3.4',
@@ -22,7 +27,7 @@ setup(name='vantiv',
       author='Aleksander Sukharev',
       author_email='alexander.sukharev1@gmail.com',
       url='https://github.com/SambaDemon/python_vantiv.git',
-      download_url='https://github.com/SambaDemon/python_vantiv/releases/tag/0.0.4',
+      download_url='https://github.com/SambaDemon/python_vantiv/releases/tag/0.0.5',
       keywords='vantiv',
       include_package_data=True,
       packages=find_packages(),
