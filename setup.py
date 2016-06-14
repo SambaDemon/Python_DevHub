@@ -18,7 +18,7 @@ setup(name='vantiv',
       author='Aleksander Sukharev',
       author_email='alexander.sukharev1@gmail.com',
       url='https://github.com/SambaDemon/python_vantiv.git',
-
+      download_url='https://github.com/SambaDemon/python_vantiv/releases/tag/0.0.1',
       keywords='vantiv',
       include_package_data=True,
       packages=find_packages(),
