@@ -8,7 +8,7 @@ with open(os.path.join(here, 'README.md')) as f:
         README = f.read()
 
 setup(name='vantiv',
-      version='0.0.1',
+      version='0.0.2',
       description='vantiv SDK with samples',
       long_description=README + '\n\n',
       classifiers=[
