@@ -58,11 +58,12 @@ class Request (object):
                 resp = urllib.urlopen(req,
                                       body.encode('UTF-8'),
                                       context=context)
-                # code = resp.getcode()
+                code = resp.getcode()
                 contents = resp.read()
+                if code != "200":
+                    error = contents
             except urllib.HTTPError as error:
                 contents = error.read()
             if (Config.printResponse):
                 print(contents)
-
             return contents
