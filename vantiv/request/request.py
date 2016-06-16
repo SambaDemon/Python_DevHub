@@ -1,8 +1,11 @@
 from __future__ import absolute_import
+import logging
 import ssl
 import urllib.request as urllib
 from .config import Config
 from .utils import remove_from_json
+
+logger = logging.getLogger(__name__)
 
 
 class Request (object):
@@ -25,9 +28,9 @@ class Request (object):
         if (Config.doNotSend):
             body, error = self.__schema__().dumps(self)
             if error:
+                logger.error(error)
                 raise AttributeError()
-            if (Config.printRequest):
-                print(body)
+                logger.debug(body)
             return body
         else:
             queryParamString = ''
@@ -40,8 +43,7 @@ class Request (object):
             body, error = self.__schema__().dumps(self)
             if error:
                 raise AttributeError()
-            if (Config.printRequest):
-                print (body)
+            logger.debug(body)
             if(Config.proxy):
                 proxy = urllib.ProxyHandler(Config.proxy)
                 auth = urllib.HTTPBasicAuthHandler()
@@ -59,11 +61,9 @@ class Request (object):
                                       body.encode('UTF-8'),
                                       context=context)
                 code = resp.getcode()
+                logger.debug(code)
                 contents = resp.read()
-                if code != "200":
-                    error = contents
             except urllib.HTTPError as error:
                 contents = error.read()
-            if (Config.printResponse):
-                print(contents)
+            logger.debug(contents)
             return contents
