@@ -12,7 +12,7 @@ def read(fname):
 
 
 setup(name='vantiv',
-      version='0.0.5',
+      version='0.0.6',
       description='vantiv SDK with samples',
       long_description=read('README.md'),
       license='MIT',
@@ -27,7 +27,7 @@ setup(name='vantiv',
       author='Aleksander Sukharev',
       author_email='alexander.sukharev1@gmail.com',
       url='https://github.com/SambaDemon/python_vantiv.git',
-      download_url='https://github.com/SambaDemon/python_vantiv/releases/tag/0.0.5',
+      download_url='https://github.com/SambaDemon/python_vantiv/releases/tag/0.0.6',
       keywords='vantiv',
       include_package_data=True,
       packages=find_packages(),
