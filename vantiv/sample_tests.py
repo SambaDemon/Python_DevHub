@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 
-from .request import sample_requests
-from .request import utils
+from request import sample_requests
+from request import utils
 
 
 def sampleCreditAuthorization():

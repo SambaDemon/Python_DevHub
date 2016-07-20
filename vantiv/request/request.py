@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 import logging
-import ssl
-import urllib.request as urllib
+import requests
 from .config import Config
 from .utils import remove_from_json
 
@@ -45,25 +44,19 @@ class Request (object):
                 raise AttributeError()
             logger.debug(body)
             if(Config.proxy):
-                proxy = urllib.ProxyHandler(Config.proxy)
-                auth = urllib.HTTPBasicAuthHandler()
-                opener = urllib.build_opener(proxy,
-                                             auth,
-                                             urllib.request.HTTPHandler)
-                urllib.install_opener(opener)
-            req = urllib.Request(url)
-            req.add_header('Authorization',
-                           'VANTIV license=' + "\"" + Config.license + "\"")
-            req.add_header('Content-Type', 'application/json')
-            context = ssl._create_unverified_context()
-            try:
-                resp = urllib.urlopen(req,
-                                      body.encode('UTF-8'),
-                                      context=context)
-                code = resp.getcode()
-                logger.debug(code)
-                contents = resp.read()
-            except urllib.HTTPError as error:
-                contents = error.read()
-            logger.debug(contents)
+                proxies = Config.proxy
+            else:
+                proxies = {}
+            headers = {
+                'Authorization':
+                    'VANTIV license=' + "\"" + Config.license + "\"",
+                'Content-Type': 'application/json'}
+            resp = requests.post(url=url, headers=headers, proxies=proxies,
+                                 data=body.encode('UTF-8'))
+            if resp.ok:
+                contents = resp.content
+                logger.debug(contents)
+            else:
+                contents = resp.content
+                logger.debug(contents)
             return contents
